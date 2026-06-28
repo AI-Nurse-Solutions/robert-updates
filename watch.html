@@ -973,7 +973,6 @@ function buildWatch() {
   const secHandMat = new THREE.MeshPhysicalMaterial({
     color: 0xff4444,
     metalness: 0.8,
-    redness: 0.8,
     roughness: 0.2,
     emissive: 0xff3333,
     emissiveIntensity: 0.3,
@@ -1094,7 +1093,6 @@ function buildStraps(sc, ss, caseR, caseH) {
       const linkB = new THREE.Mesh(linkGeo.clone(), linkMat);
       linkB.position.set(0, -(caseR * 0.9 + i * 0.5), caseH * 0.3);
       linkB.castShadow = true;
-      watchLinkB = linkB;
       watchGroup.add(linkB);
     }
   }
