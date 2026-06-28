@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robert Domondon — Updates for Close Friends</title>
+<style>
+  :root {
+    --navy: #10213f;
+    --navy-light: #1a3158;
+    --teal: #0f766e;
+    --teal-light: #14b8a6;
+    --gold: #b7791f;
+    --gold-light: #d4a017;
+    --cream: #f8f6f0;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --gray-light: #e5e7eb;
+    --dark: #0a1628;
+    --dark-text: #1f2937;
+    --radius: 12px;
+    --shadow: 0 4px 20px rgba(16, 33, 63, 0.08);
+    --shadow-lg: 0 8px 40px rgba(16, 33, 63, 0.12);
+  }
+
+  [data-theme="dark"] {
+    --navy: #0a1628;
+    --navy-light: #10213f;
+    --cream: #1a2332;
+    --dark-text: #e5e7eb;
+    --gray: #9ca3af;
+    --gray-light: #374151;
+    --white: #1a2332;
+    --shadow: 0 4px 20px rgba(0,0,0,0.3);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.4);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--cream);
+    color: var(--dark-text);
+    line-height: 1.7;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  /* ===== NAV BAR ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--navy);
+    z-index: 100;
+    box-shadow: var(--shadow);
+  }
+  nav .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+  }
+  nav .brand {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  nav .brand span { color: var(--gold-light); }
+  nav .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    list-style: none;
+  }
+  nav .nav-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav .nav-links a:hover { color: var(--gold-light); }
+  .theme-toggle {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s;
+  }
+  .theme-toggle:hover { background: rgba(255,255,255,0.2); }
+
+  @media (max-width: 768px) {
+    nav .nav-links a { display: none; }
+    nav .nav-links a.theme-toggle { display: block; }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 100px 24px 60px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hero .date-badge {
+    display: inline-block;
+    background: rgba(183, 121, 31, 0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ===== SECTION ===== */
+  section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  [data-theme="dark"] .section-title { color: var(--white); }
+
+  /* ===== CARDS ===== */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    transition: box-shadow 0.3s;
+  }
+  .card:hover { box-shadow: var(--shadow-lg); }
+  .card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--navy);
+  }
+  [data-theme="dark"] .card h3 { color: var(--white); }
+  .card p { color: var(--dark-text); margin-bottom: 12px; font-size: 0.95rem; }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* ===== TIMELINE ===== */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 20px;
+  }
+  .timeline-item {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 28px;
+    position: relative;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 28px;
+    bottom: 0;
+    width: 2px;
+    background: var(--gray-light);
+  }
+  .timeline-item:last-child::before { display: none; }
+  .timeline-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 3px solid var(--cream);
+    flex-shrink: 0;
+    z-index: 1;
+    box-shadow: 0 0 0 2px var(--teal);
+  }
+  .timeline-dot.gold { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+  .timeline-dot.navy { background: var(--navy); box-shadow: 0 0 0 2px var(--navy); }
+  .timeline-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--navy);
+  }
+  [data-theme="dark"] .timeline-content h4 { color: var(--white); }
+  .timeline-content .timeline-date {
+    font-size: 12px;
+    color: var(--teal);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  .timeline-content p {
+    font-size: 0.9rem;
+    color: var(--gray);
+  }
+
+  /* ===== PRESS RELEASE ===== */
+  .press-release {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--gold);
+  }
+  [data-theme="dark"] .press-release { background: var(--white); }
+  .press-release .pr-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .press-release h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--navy);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  [data-theme="dark"] .press-release h2 { color: var(--white); }
+  .press-release .dateline {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  .press-release p {
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    color: var(--dark-text);
+  }
+  .press-release blockquote {
+    border-left: 3px solid var(--teal);
+    padding: 12px 20px;
+    margin: 20px 0;
+    background: rgba(15, 118, 110, 0.05);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--dark-text);
+  }
+  .press-release blockquote .attrib {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--teal);
+  }
+  .press-release .pr-section-break {
+    text-align: center;
+    margin: 24px 0;
+    color: var(--gray);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+  .press-release .about-box {
+    background: rgba(16, 33, 63, 0.03);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  [data-theme="dark"] .press-release .about-box { background: rgba(255,255,255,0.05); }
+  .press-release .about-box h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+    margin-bottom: 8px;
+  }
+  .press-release .contact-box {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--gray-light);
+    font-size: 0.85rem;
+    color: var(--gray);
+  }
+
+  /* ===== TWO COMPANIES GRID ===== */
+  .companies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 20px;
+  }
+  @media (max-width: 640px) {
+    .companies-grid { grid-template-columns: 1fr; }
+  }
+  .company-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--teal);
+  }
+  .company-card.naio { border-top-color: var(--gold); }
+  .company-card .company-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .company-card.naio .company-tag { color: var(--gold); }
+  .company-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+    color: var(--navy);
+  }
+  [data-theme="dark"] .company-card h3 { color: var(--white); }
+  .company-card .company-sub {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 16px;
+  }
+  .company-card p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  .company-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .company-card ul li {
+    font-size: 0.85rem;
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+    color: var(--dark-text);
+  }
+  .company-card ul li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-size: 0.7rem;
+  }
+  .company-card.naio ul li::before { color: var(--gold); }
+
+  .agent-stack {
+    margin-top: 28px;
+    background: linear-gradient(135deg, rgba(16,33,63,0.03), rgba(15,118,110,0.03));
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  [data-theme="dark"] .agent-stack { background: rgba(255,255,255,0.03); }
+  .agent-stack h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--navy);
+  }
+  [data-theme="dark"] .agent-stack h4 { color: var(--white); }
+  .agent-stack p {
+    font-size: 0.9rem;
+    color: var(--dark-text);
+  }
+
+  /* ===== CTA / FOOTER ===== */
+  .footer-cta {
+    text-align: center;
+    padding: 60px 24px;
+    background: var(--navy);
+    color: var(--white);
+  }
+  .footer-cta h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .footer-cta p {
+    color: rgba(255,255,255,0.7);
+    max-width: 500px;
+    margin: 0 auto 24px;
+    font-size: 0.95rem;
+  }
+  .footer-cta .mantra {
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 1rem;
+    margin-top: 16px;
+  }
+  .footer-meta {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: var(--gray);
+    background: var(--navy);
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ===== BOOK CARDS ===== */
+  .book-card {
+    display: flex;
+    gap: 24px;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+  @media (max-width: 640px) {
+    .book-card { flex-direction: column; }
+  }
+  .book-cover {
+    width: 100px;
+    height: 140px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.15);
+  }
+  .book-cover.book1 {
+    background: linear-gradient(135deg, var(--navy), var(--teal));
+  }
+  .book-cover.book2 {
+    background: linear-gradient(135deg, var(--teal), var(--gold));
+  }
+  .book-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  [data-theme="dark"] .book-info h3 { color: var(--white); }
+  .book-info .book-subtitle {
+    font-size: 0.85rem;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .book-info .book-date {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+  .book-info .book-date strong {
+    color: var(--gold);
+  }
+  .book-info p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body data-theme="light">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="brand">Robert Domondon <span>· Updates</span></div>
+    <ul class="nav-links">
+      <li><a href="#retirement">Retirement Plan</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#press-release">Nurse AI OS</a></li>
+      <li><a href="#companies">Two Companies</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()">☾</button></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="date-badge">Personal Update · June 2026</div>
+  <h1>Where I'm Going, and Why</h1>
+  <p>A note for close friends and family — the plan, the books, the launch, and the two companies I'm building with AI agents at my side.</p>
+</div>
+
+<div class="container">
+
+  <!-- ===== SECTION 1: RETIREMENT PLAN ===== -->
+  <section id="retirement">
+    <div class="section-label">Personal Plan</div>
+    <h2 class="section-title">My Plan to Retire by June 2027</h2>
+
+    <div class="card">
+      <p>Some of you have watched me work night shifts in the ICU, come home, and keep building until 3 AM. You've asked: <em>"Rob, when do you sleep?"</em> The honest answer is: not enough. But there's a plan, and it has a date.</p>
+
+      <p>By June 2027, I plan to retire from bedside nursing — not because I don't love it, but because I've found a bigger way to serve. The same instinct that made me a good ICU nurse — watching, protecting, catching the thing before it becomes the thing — is what the healthcare AI movement needs most. Nurses aren't end-users of AI. We're the stewards. And right now, no one is building the infrastructure for that role to exist at scale.</p>
+
+      <p>That's what I'm building. Two companies. Two books. One operating system for nurse-led AI governance. And a community of nurses who believe AI should serve dignity, not replace it.</p>
+
+      <p>Here's the timeline I'm holding myself to:</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot gold"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">July 2026</div>
+            <h4>Nurse AI OS Launch</h4>
+            <p>The public launch of the Nurse AI Operating System — a governed, no-PHI space where nurses learn to steward AI without handing over their judgment.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">September 2026</div>
+            <h4>Book One Published</h4>
+            <p>The first book — the why and the doctrine of nurse-led AI governance. The case for nurses as the connective tissue of safe AI in healthcare.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">October 2026</div>
+            <h4>Book Two Published</h4>
+            <p>The second book — the how. The operating model: EDENA governance tiers, Florence-X orchestration, and the practical playbook for institutions.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot navy"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">January – June 2027</div>
+            <h4>Scale & Institutional Adoption</h4>
+            <p>Founding Steward cohorts running. Hospital partnerships in conversation. NIN membership crossing 1,000 activated nurses. Revenue covering full cost of living.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot navy"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">June 2027</div>
+            <h4>Retirement from Bedside</h4>
+            <p>Final shift. Not goodbye to nursing — graduation to a different kind of service. The mission doesn't change. The scale does.</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top: 24px; font-style: italic; color: var(--gray);">To my friends who have covered shifts, listened to 2 AM rants about governance frameworks, and believed in this when it was just an idea — thank you. The lamp is lit. The ledger is open.</p>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2: BOOKS ===== -->
+  <section id="books">
+    <div class="section-label">In the Making</div>
+    <h2 class="section-title">Two Books, September & October 2026</h2>
+
+    <p style="margin-bottom: 28px; color: var(--gray); font-size: 0.95rem;">Two books, back to back. The first makes the case. The second gives the method. Together they form the canon for nurse-led AI governance.</p>
+
+    <!-- BOOK SECTION — hidden for now; will reveal when books are ready -->
+    <div style="text-align: center; padding: 40px; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 24px;">
+      <div style="font-size: 2rem; margin-bottom: 12px;">📖</div>
+      <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Two Books — Coming Soon</h3>
+      <p style="font-size: 0.9rem; color: var(--gray); margin: 0;">Details to follow.</p>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: PRESS RELEASE ===== -->
+  <section id="press-release">
+    <div class="section-label">Launch Announcement</div>
+    <h2 class="section-title">Nurse AI OS — Press Release</h2>
+
+    <div class="press-release">
+      <div class="pr-label">FOR IMMEDIATE RELEASE</div>
+      <h2>Nurse AI OS Launches This July: The First Operating System Built for Nurse-Led AI Governance</h2>
+      <div class="dateline">July 2026 — Global</div>
+
+      <p><strong>The NAIO Institute today announced the launch of Nurse AI OS (nurse-ai-os.org), a governed, no-PHI platform where nurses learn to steward artificial intelligence without handing over their clinical judgment.</strong></p>
+
+      <p>Nurse AI OS is the first operating system of its kind — built not for technologists, but for the nurses who stand between AI tools and the patients they serve. It provides a structured environment where nurses develop AI literacy, practice governance, and prepare for the emerging role of Nurse AI Orchestrator: the institutional authority responsible for safe, ethical AI deployment at the clinical front line.</p>
+
+      <p>The platform is built on three pillars:</p>
+
+      <p><strong>EDENA Governance Framework</strong> — A five-lens stewardship model (Equity & Ethics, Dignity & Data, Environment & Externalities, Nursing Relevance & Nurse Wellbeing, Agency & Action) with tiered autonomy levels from informational support to supervised action. Every AI agent on the platform carries an EDENA governance card that defines its scope, boundaries, and escalation rules.</p>
+
+      <p><strong>Florence-X Orchestration</strong> — A multi-agent architecture that lets nurses coordinate AI tools the way they coordinate care: with handoffs, escalations, and human gates. Agents propose. Humans judge. Nurses steward.</p>
+
+      <p><strong>Nurse Intelligence Network (NIN)</strong> — A community layer where nurses learn together, share governance patterns, and build the professional identity of the AI-era nurse. NIN membership includes access to cohorts, governance tools, and the public NAIO Agent Registry of vetted, EDENA-carded AI agents.</p>
+
+      <blockquote>
+        "We built Nurse AI OS because the question was never whether AI would reach the bedside — it's already there. The question is whether nurses will have authority over how it's deployed, or whether we'll be treated as end-users of systems we never approved. Nurse AI OS gives nurses the infrastructure to be stewards, not spectators. That's not a nice-to-have. It's a patient safety imperative."
+        <span class="attrib">— Robert Domondon, RN, CCRN, CSC, CMC, MD | Founder, NAIO Institute</span>
+      </blockquote>
+
+      <p>Nurse AI OS launches with a Founding Steward Cohort — a curated group of nurses, nurse leaders, and clinical informaticists who will be the first to complete the NAIO governance curriculum and shape the platform's evolution. Applications are open now at nurse-ai-os.org.</p>
+
+      <p>The platform is strictly non-clinical and contains no PHI. It does not make clinical decisions, replace nursing judgment, or constitute medical advice. It is a governance and education environment — the control plane through which nurses develop the authority to oversee AI in their institutions.</p>
+
+      <div class="pr-section-break">###</div>
+
+      <div class="about-box">
+        <h4>About NAIO Institute</h4>
+        <p>The NAIO Institute is building the authority infrastructure for nurse-led AI governance in healthcare. Through the EDENA framework, Florence-X orchestration, the NIN community, and the Nurse AI OS platform, NAIO equips nurses to serve as the connective tissue between AI innovation and patient safety. Its mission: <strong>Where Nightingale Meets Neural Net.</strong></p>
+      </div>
+
+      <div class="contact-box">
+        <strong>Media Contact:</strong> Robert Domondon, Founder<br>
+        <strong>Email:</strong> great.ai.nurses@gmail.com<br>
+        <strong>Website:</strong> nurse-ai-os.org<br>
+        <strong>Social:</strong> @nurse_intelligence (Instagram) · @RobertDomondon (X) · LinkedIn
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: TWO COMPANIES ===== -->
+  <section id="companies">
+    <div class="section-label">Building with AI</div>
+    <h2 class="section-title">Running Two Companies — with AI Agents</h2>
+
+    <p style="margin-bottom: 24px; color: var(--gray); font-size: 0.95rem;">People ask how a solo founder runs two companies while still working ICU shifts. The answer: I don't run them alone. I run them with an AI operating system that has the heart of a nurse — governed by EDENA tiers, orchestrated through Florence-X, and accountable to human judgment at every gate.</p>
+
+    <div class="companies-grid">
+      <!-- NIN -->
+      <div class="company-card">
+        <div class="company-tag">Company One</div>
+        <h3>NIN</h3>
+        <div class="company-sub">Nurse Intelligence Network</div>
+        <p>The community and media company. NIN is where nurses gather, learn, and build professional identity in the AI era — through podcasts, fellowship cohorts, field notes, and the NIN membership.</p>
+        <p style="font-weight: 600; margin-bottom: 8px;">What AI agents power:</p>
+        <ul>
+          <li>Content research and trend intelligence (NAMOS)</li>
+          <li>Podcast production and repurposing into multi-platform kits</li>
+          <li>Membership onboarding and community signal tracking</li>
+          <li>Market intelligence and competitor monitoring</li>
+        </ul>
+      </div>
+
+      <!-- NAIO -->
+      <div class="company-card naio">
+        <div class="company-tag">Company Two</div>
+        <h3>NAIO</h3>
+        <div class="company-sub">NAIO Institute</div>
+        <p>The authority and infrastructure company. NAIO builds the governance frameworks, certification standards, and operating systems — EDENA, Florence-X, Nurse AI OS, and the Agent Registry — that give nurses institutional power over AI deployment.</p>
+        <p style="font-weight: 600; margin-bottom: 8px;">What AI agents power:</p>
+        <ul>
+          <li>Agent Registry vetting and EDENA governance card generation</li>
+          <li>Course and curriculum development pipelines</li>
+          <li>Technology assessment and KB curation</li>
+          <li>Governance documentation and policy drafting</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="agent-stack">
+      <h4>How It Works: The Agent Stack</h4>
+      <p>I operate through a personal AI Chief of Staff — Hermes, running under the NAIO governance layer. Every agent operates within EDENA tiers (Green for safe, informational work; Yellow for supervised tasks; Orange and Red require explicit human approval). Agents propose actions. I judge them. The system stewards execution. No PHI enters the system. No clinical decisions are delegated. Every meaningful action passes through a human gate.</p>
+      <p style="margin-top: 12px;">This is the model I'm teaching other nurses to build for themselves. Not because every nurse should become a developer — but because every nurse should have a governed AI system that works <em>for them</em>, amplifies their judgment, and never, ever replaces it.</p>
+      <p style="margin-top: 12px; font-style: italic; color: var(--teal); font-weight: 600;">One founder. Two companies. A dozen AI agents. One human accountable for every decision. That's the point.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <h2>Want to Follow Along?</h2>
+  <p>This page is for close friends and family. If you want the public journey — the articles, the podcast, the launch — find me at the links below.</p>
+  <p style="font-size: 0.9rem;">
+    <a href="https://nurse-ai-os.org" style="color: var(--gold-light); text-decoration: none;">nurse-ai-os.org</a> ·
+    <a href="https://www.linkedin.com/in/robertdomondon/" style="color: var(--gold-light); text-decoration: none;">LinkedIn</a> ·
+    <a href="https://www.instagram.com/nurse_intelligence/" style="color: var(--gold-light); text-decoration: none;">Instagram</a> ·
+    <a href="https://x.com/RobertDomondon" style="color: var(--gold-light); text-decoration: none;">X</a>
+  </p>
+  <div class="mantra">Agents propose. Humans judge. Nurses steward.</div>
+</div>
+
+<div class="footer-meta">
+  Personal update for close friends · June 2026 · Robert Domondon, RN
+</div>
+
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    const current = body.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', next);
+    document.querySelector('.theme-toggle').textContent = next === 'dark' ? '☀' : '☾';
+    localStorage.setItem('dashboard-theme', next);
+  }
+  // Load saved theme
+  (function() {
+    const saved = localStorage.getItem('dashboard-theme');
+    if (saved === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '☀';
+    }
+  })();
+  // Smooth scroll
+  document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
