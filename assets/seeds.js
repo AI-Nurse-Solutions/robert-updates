@@ -1,13 +1,69 @@
-window.SEED_GARDEN_UPDATED = "August 15, 2026";
+window.SEED_GARDEN_UPDATED = "August 15, 2026 — 30-Day Direction";
 
 window.SEED_GARDEN = [
+  {
+    id: "30-day-edge-agent-north-star",
+    title: "30-Day North Star: prove the Nurse AI OS Edge-Agent Hybrid",
+    summary: "For the next 30 days, concentrate the Nurse AI OS roadmap on one architecture: sovereign nurse-controlled intelligence at the edge plus a governed registry that distributes reviewed, versioned, non-PHI capabilities without centralizing the nurse's private working context.",
+    status: "growing", priority: "Critical", horizon: "Next 30 days", workstream: "Nurse AI OS / Edge-Agent Hybrid",
+    tags: ["North Star", "Sovereign Edge", "Governed Registry", "Non-PHI", "MVP"],
+    next: "Treat this as the product filter for the month: every build, demo, article, partnership, and experiment should strengthen the edge, the registry, the governance layer, or the reuse loop."
+  },
+  {
+    id: "edge-phase-zero-governance",
+    title: "Phase 0: lock governance before capability distribution",
+    summary: "Finalize the personal/community-edition boundary before scaling features: non-PHI only, explicit prohibited uses, EDENA risk tiers, reviewer roles, submission metadata, incident response, scoped approval, rollback, revocation, and human accountability.",
+    status: "growing", priority: "Critical", horizon: "Days 1–7", workstream: "Nurse AI OS / Edge-Agent Hybrid",
+    tags: ["EDENA", "Governance", "Boundaries", "Risk", "Human accountability"],
+    next: "Produce the Phase 0 governance packet and a one-page acceptance test showing what the personal/community edition will allow, pause, escalate, and refuse."
+  },
+  {
+    id: "sovereign-edge-proof",
+    title: "Prove the Sovereign Edge as the nurse's personal intelligence runtime",
+    summary: "Demonstrate a nurse-controlled local environment containing private context, Soul configuration, Mission Control, Hermes/agent runtime, local storage, explicit permissions, local logs, stop controls, and bounded execution — without requiring a cloud service to hold the nurse's private working data.",
+    status: "growing", priority: "Critical", horizon: "Days 1–14", workstream: "Nurse AI OS / Edge-Agent Hybrid",
+    tags: ["Hermes", "Mission Control", "Soul", "Local AI", "Permissions"],
+    next: "Build one clean demo on a nurse-controlled device: select local non-PHI files → invoke an approved capability → expose permissions → produce locally → nurse reviews → local audit record."
+  },
+  {
+    id: "governed-registry-pilot",
+    title: "Launch the first non-executable Nurse-Led Innovation Registry pilot",
+    summary: "The first shared layer should distribute reviewed role profiles, prompt packs, evaluation rubrics, synthetic scenarios, implementation guides, provenance, version status, and scope — before community executable code is introduced.",
+    status: "growing", priority: "Critical", horizon: "Days 8–21", workstream: "Nurse AI OS / Edge-Agent Hybrid",
+    tags: ["Registry", "Florence-X", "Provenance", "Versioning", "Green tier"],
+    next: "Stand up the minimum registry schema and publish 5–10 Green-tier artifacts with owner, purpose, version, risk tier, permissions, evidence, limitations, review status, and deprecation path."
+  },
+  {
+    id: "shared-capability-golden-path",
+    title: "Demonstrate the golden path: one nurse solves once, many nurses inherit safely",
+    summary: "The defining proof is not a chatbot demo. It is a governed capability loop: a nurse creates a reusable non-PHI solution, it is reviewed and scoped, published with provenance, discovered by another nurse, executed locally under explicit permissions, evaluated, and improved without exposing private context.",
+    status: "germinating", priority: "Critical", horizon: "Days 15–30", workstream: "Nurse AI OS / Edge-Agent Hybrid",
+    tags: ["Golden path", "Reuse", "Innovation", "Evaluation", "Distribution"],
+    next: "Choose one simple capability—such as a clinical-ladder organizer, CE tracker, project-status synthesizer, or reflective learning pathway—and run the full creator → review → publish → install → use → feedback cycle."
+  },
+  {
+    id: "edge-evaluation-suite",
+    title: "Make evaluation assets a first-class shared capability",
+    summary: "Nurses should share not only prompts and tools but the tests that define acceptable behavior. Scope adherence, factuality, citations, privacy leakage, accessibility, prompt injection, expected refusals, and regression behavior become reusable professional assets.",
+    status: "germinating", priority: "High", horizon: "Next 30 days", workstream: "Nurse AI OS / Edge-Agent Hybrid",
+    tags: ["Evals", "Verification", "Regression", "Safety", "Trust"],
+    next: "Create a standard Green-tier evaluation bundle template and attach it to every artifact selected for the registry pilot."
+  },
+  {
+    id: "edge-story-category",
+    title: "Clarify the category: from personal assistant to nurse-governed capability network",
+    summary: "The strategic story is evolving. Nurse AI OS is not simply a local assistant and not a centralized hive mind; it is a nurse-controlled personal intelligence environment connected to a governed capability network where safe innovation can compound across the profession.",
+    status: "germinating", priority: "High", horizon: "Next 30 days", workstream: "Thought Leadership",
+    tags: ["Category", "Positioning", "Sovereignty", "Network effects", "Governed reuse"],
+    next: "Update the investor, webinar, website, and co-founder narrative around the phrase: local intelligence, shared capabilities, governed distribution."
+  },
   {
     id: "xprize-edena-platform",
     title: "Turn the EDENA XPRIZE submission into a thought-leadership platform",
     summary: "The film is not primarily a technology story; it argues that diverse personal intelligences should remain grounded in human values, with nurses as natural stewards of AI.",
     status: "blooming", priority: "High", horizon: "Next 30 days", workstream: "EDENA / Future Vision",
     tags: ["XPRIZE", "EDENA", "Care Intelligence", "Stewardship", "Personal AGI"],
-    next: "Create a post-submission narrative kit: thesis, 3 signature arguments, 60-second explanation, article series, and finalist/non-finalist continuation plan."
+    next: "Connect the future-vision narrative to the Edge-Agent Hybrid: personal intelligence remains locally governed while safe capabilities can be shared across a profession without creating a centralized hive mind."
   },
   {
     id: "founders-cofounder",
@@ -15,7 +71,7 @@ window.SEED_GARDEN = [
     summary: "Use the founders network as a discovery surface for technical and strategic collaborators without allowing capital or growth pressure to dilute the nurse-governed mission.",
     status: "growing", priority: "High", horizon: "Next 60 days", workstream: "Network / Capital",
     tags: ["Co-founder", "Founders", "Mission lock", "Organic growth"],
-    next: "Define the co-founder scorecard: capabilities, values alignment, equity philosophy, sovereignty posture, healthcare understanding, and 90-day trial project."
+    next: "Use the Edge-Agent Hybrid as the technical conversation anchor and define the co-founder scorecard: edge architecture, registry systems, security discipline, values alignment, and 90-day trial project."
   },
   {
     id: "capital-doctrine",
@@ -31,7 +87,7 @@ window.SEED_GARDEN = [
     summary: "The strongest demonstration is a bounded workflow from trigger or ingestion through transformation, evaluation, human validation, and proof of unit value — not a collection of disconnected AI features.",
     status: "growing", priority: "Critical", horizon: "Aug 27", workstream: "VNC ICU / Hackathon",
     tags: ["Sutter", "Microsoft Copilot", "GitHub Copilot", "Eval", "Proof of value"],
-    next: "Choose the primary workflow, define baseline vs AI-assisted state, success metrics, failure cases, evaluation rubric, demo script, and rollback/manual fallback."
+    next: "Choose the primary workflow, define baseline vs AI-assisted state, success metrics, failure cases, evaluation rubric, demo script, and rollback/manual fallback. Preserve separation between the institutional hackathon environment and the personal/community Nurse AI OS trust domain."
   },
   {
     id: "hackathon-second-workflow",
@@ -47,23 +103,23 @@ window.SEED_GARDEN = [
     summary: "Show nurses how skills convert a personal AI from question-answering into bounded, reusable work while keeping the nurse in the stewardship role.",
     status: "blooming", priority: "High", horizon: "This week", workstream: "A Beautiful Flight",
     tags: ["Hermes", "Skills", "Webinar", "Education"],
-    next: "Build one memorable live scenario: nurse intent → skill invocation → artifact/output → nurse review → saved capability."
+    next: "Use the Edge-Agent Hybrid as the framing: demonstrate one locally executed skill, then show how a reviewed non-PHI capability could eventually be shared through the governed registry."
   },
   {
     id: "mission-control-whole-nurse",
     title: "Mission Control for the whole nurse",
     summary: "The dashboard should reflect the multidimensional nurse — professional, learning, leadership, innovation, financial, creative, family, wellness, and service lanes — rather than reducing identity to the hospital role.",
-    status: "growing", priority: "High", horizon: "This quarter", workstream: "Nurse AI OS",
+    status: "growing", priority: "High", horizon: "Next 30 days", workstream: "Nurse AI OS",
     tags: ["Mission Control", "Personalization", "Whole nurse", "Dashboard"],
-    next: "Define the canonical dashboard object model: roles, missions, projects, signals, commitments, evidence, learning, relationships, and reflection."
+    next: "Prioritize the Edge-Agent control surface: installed capabilities, permissions, provenance, risk indicators, approvals, logs, stop controls, projects, and whole-nurse missions."
   },
   {
     id: "personal-agi-architecture",
     title: "Evolve Nurse AI OS into a personal AGI architecture",
-    summary: "The target is not one omniscient assistant. It is a governed personal intelligence environment with identity, durable memory, skills, agents, tools, evaluation, Mission Control, and explicit human authority.",
-    status: "germinating", priority: "Critical", horizon: "6–12 months", workstream: "Nurse AI OS",
+    summary: "The target is not one omniscient assistant. It is a governed personal intelligence environment with identity, durable memory, skills, agents, tools, evaluation, Mission Control, explicit human authority, and access to a governed capability network.",
+    status: "growing", priority: "Critical", horizon: "Next 30 days", workstream: "Nurse AI OS",
     tags: ["Personal AGI", "Hermes", "Florence-X", "EDENA", "Architecture"],
-    next: "Write the Personal AGI Reference Architecture v0.1 with layers for Soul/identity, memory, context, skills, agents, tools, orchestration, governance, evals, and human control."
+    next: "Use the Edge-Agent Hybrid as Personal AGI Reference Architecture v0.1: Soul/identity + local memory/context + skills/agents/tools + Mission Control + permissions/evals + governed registry + human control."
   },
   {
     id: "personal-ai-values-mirror",
@@ -79,15 +135,15 @@ window.SEED_GARDEN = [
     summary: "Build relationships in countries that educate and send nurses internationally, offering Nurse AI OS and AI stewardship capability as portable professional infrastructure that travels with the nurse.",
     status: "germinating", priority: "High", horizon: "6–12 months", workstream: "Global NIN",
     tags: ["International", "Nurse organizations", "Migration", "Install base"],
-    next: "Prioritize 3–5 countries using nurse migration volume, English readiness, nursing-school networks, professional associations, digital access, and local champion potential."
+    next: "Use the 30-day Edge-Agent pilot to create the portable product story first; then prioritize 3–5 countries using nurse migration volume, nursing-school networks, professional associations, digital access, and local champion potential."
   },
   {
     id: "portable-nurse-intelligence",
     title: "Position Nurse AI OS as portable career infrastructure",
-    summary: "Institutional systems belong to employers; a personal governed AI environment can travel across employers, specialties, countries, and career stages while preserving the nurse's own knowledge and development.",
+    summary: "Institutional systems belong to employers; a personal governed AI environment can travel across employers, specialties, countries, and career stages while preserving the nurse's own knowledge, capabilities, and development.",
     status: "growing", priority: "High", horizon: "Next 90 days", workstream: "Nurse AI OS",
     tags: ["Career", "Sovereignty", "Portable", "Positioning"],
-    next: "Create a lifecycle map from student → bedside nurse → specialist → leader → educator/entrepreneur → mentor, showing what the OS carries forward."
+    next: "Show how the Sovereign Edge travels with the nurse while governed capability packages can be installed, updated, revoked, and replaced without transferring the nurse's private context."
   },
   {
     id: "seed-capture-protocol",
@@ -103,7 +159,7 @@ window.SEED_GARDEN = [
     summary: "Ideas become strategically valuable when they create observable outcomes. Every growing seed should eventually define what evidence would cause us to expand, revise, pause, or stop it.",
     status: "germinating", priority: "Medium", horizon: "This quarter", workstream: "Personal Operating System",
     tags: ["Evals", "Evidence", "Learning loop", "Metrics"],
-    next: "Add a lightweight evidence field to mature seeds: hypothesis, signal, metric, observation, decision."
+    next: "Apply the evidence loop first to the Edge-Agent golden path: hypothesis, safety/eval suite, user benefit, review findings, incident/near-miss signals, and go/no-go decision."
   },
   {
     id: "nurse-ai-os-free-install-base",
@@ -111,7 +167,7 @@ window.SEED_GARDEN = [
     summary: "Free access can build trust and distribution if onboarding leads to activation, governed first use, recurring value, contribution, and eventual certification or community participation.",
     status: "seed", priority: "Medium", horizon: "This quarter", workstream: "Global NIN",
     tags: ["Free", "Install base", "Onboarding", "Activation"],
-    next: "Define the first 30 minutes, first 7 days, and first 30 days of a new nurse's journey, with one measurable activation event at each stage."
+    next: "Do not scale free distribution ahead of the Edge-Agent governance and registry pilot. First prove safe onboarding, capability provenance, permissions, local control, and revocation."
   },
   {
     id: "nurse-stewardship-thesis",
@@ -119,7 +175,7 @@ window.SEED_GARDEN = [
     summary: "The durable claim is not that nurses are more intelligent than others; it is that nursing combines vigilance, relational intelligence, coordination, advocacy, accountability, and care under uncertainty — a strong operating posture for governing AI.",
     status: "blooming", priority: "High", horizon: "Long arc", workstream: "Thought Leadership",
     tags: ["Stewardship", "Nursing", "Care Intelligence", "Governance"],
-    next: "Build an evidence-backed signature essay and keynote framework that distinguishes stewardship from technical control or professional supremacy."
+    next: "Use the Edge-Agent Hybrid as a concrete proof of the thesis: intelligence can be distributed while accountability, scope, review, and authorization stay visibly human."
   },
   {
     id: "xprize-submitted",
@@ -128,6 +184,14 @@ window.SEED_GARDEN = [
     status: "harvested", priority: "High", horizon: "Completed", workstream: "EDENA / Future Vision",
     tags: ["Milestone", "XPRIZE", "Film", "EDENA"],
     next: "Preserve the submission as a canonical narrative artifact and reuse its thesis regardless of competition outcome."
+  },
+  {
+    id: "edge-agent-architecture-written",
+    title: "Nurse AI OS Edge-Agent Hybrid Architecture v1.0 defined",
+    summary: "The architecture now formally separates Sovereign Edge from Governed Registry and defines scope, controls, artifact types, review lifecycle, EDENA tiers, security objectives, MVP phases, success measures, risks, and language standards.",
+    status: "harvested", priority: "Critical", horizon: "Completed", workstream: "Nurse AI OS / Edge-Agent Hybrid",
+    tags: ["Milestone", "Architecture", "Governance", "MVP"],
+    next: "Move from architecture document to Phase 0 controls and one end-to-end demonstrator."
   },
   {
     id: "founders-network-joined",
