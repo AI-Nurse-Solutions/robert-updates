@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Planning archive and production brief for In Beautiful Flight, a nurse-facing webinar series created and moderated by Patty Hsu with Robert Domondon as co-moderator.">
+<title>In Beautiful Flight — Webinar Planning Archive</title>
+<style>
+  :root {
+    --navy:#10213f;
+    --navy-2:#1a3158;
+    --teal:#0f766e;
+    --teal-2:#14b8a6;
+    --gold:#b7791f;
+    --gold-2:#d4a017;
+    --cream:#f8f6f0;
+    --paper:#ffffff;
+    --ink:#1f2937;
+    --muted:#667085;
+    --line:#e4e7ec;
+    --green:#18794e;
+    --amber:#b54708;
+    --red:#b42318;
+    --radius:16px;
+    --shadow:0 8px 32px rgba(16,33,63,.10);
+  }
+  [data-theme="dark"] {
+    --cream:#111827;
+    --paper:#172033;
+    --ink:#f3f4f6;
+    --muted:#c2c8d0;
+    --line:#334155;
+    --navy:#081222;
+    --navy-2:#10213f;
+    --shadow:0 8px 32px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
+  a{color:var(--teal)}
+  a:hover{color:var(--gold)}
+  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:#000;padding:10px;z-index:999}
+  .skip:focus{left:12px;top:12px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(16,33,63,.97);box-shadow:0 2px 16px rgba(0,0,0,.12)}
+  .nav-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 22px}
+  .brand{color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.02em}
+  .brand span{color:var(--gold-2)}
+  .nav-links{display:flex;align-items:center;gap:16px;list-style:none;margin:0;padding:0}
+  .nav-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;font-weight:650}
+  .nav-links a:hover{color:var(--gold-2)}
+  .nav-button{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;border-radius:9px;padding:7px 10px;cursor:pointer}
+  .hero{background:radial-gradient(circle at 15% 20%,rgba(20,184,166,.38),transparent 28%),radial-gradient(circle at 86% 16%,rgba(212,160,23,.26),transparent 25%),linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:86px 22px 72px}
+  .hero-inner{max-width:1040px;margin:auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.08);border-radius:999px;padding:7px 13px;color:#f8e3a7;font-size:12px;font-weight:750;text-transform:uppercase;letter-spacing:.08em}
+  h1{font-size:clamp(2.35rem,6vw,4.8rem);line-height:1.01;letter-spacing:-.055em;margin:20px 0 16px;max-width:880px}
+  .hero .lead{max-width:800px;font-size:1.16rem;color:rgba(255,255,255,.82);margin:0 0 24px}
+  .byline{display:flex;flex-wrap:wrap;gap:10px 22px;color:rgba(255,255,255,.78);font-size:.95rem}
+  .byline strong{color:#fff}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:10px;padding:11px 17px;font-size:14px;font-weight:750;text-decoration:none;border:1px solid transparent;cursor:pointer}
+  .btn-primary{background:var(--teal-2);color:#062b28}
+  .btn-secondary{border-color:rgba(255,255,255,.30);color:#fff;background:rgba(255,255,255,.08)}
+  .btn-light{background:var(--paper);color:var(--navy);border-color:var(--line)}
+  .wrap{max-width:1120px;margin:auto;padding:0 22px}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  .section-kicker{font-size:12px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+  h2{font-size:clamp(1.75rem,4vw,2.6rem);line-height:1.12;letter-spacing:-.035em;margin:0 0 18px;color:var(--navy)}
+  [data-theme="dark"] h2,[data-theme="dark"] h3{color:#fff}
+  h3{font-size:1.15rem;line-height:1.3;margin:0 0 10px;color:var(--navy)}
+  p{margin:0 0 14px}
+  .intro{max-width:850px;color:var(--muted);font-size:1.02rem}
+  .callout{background:linear-gradient(135deg,rgba(15,118,110,.09),rgba(212,160,23,.08));border:1px solid rgba(15,118,110,.24);border-radius:var(--radius);padding:24px;margin:24px 0}
+  .callout strong{color:var(--teal)}
+  .grid{display:grid;gap:18px}
+  .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:23px;box-shadow:var(--shadow)}
+  .card p:last-child{margin-bottom:0}
+  .stat{font-size:2.05rem;line-height:1;font-weight:850;color:var(--teal);letter-spacing:-.04em;margin-bottom:9px}
+  .stat-label{font-weight:750;margin-bottom:7px}
+  .stat-note{font-size:.83rem;color:var(--muted)}
+  .source-tag{font-size:.74rem;display:inline-block;margin-top:10px;padding:4px 8px;border-radius:999px;background:rgba(15,118,110,.09);color:var(--teal);text-decoration:none;font-weight:700}
+  .agenda{display:grid;gap:12px;margin-top:26px}
+  .agenda-item{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .time{font-weight:850;color:var(--gold);font-variant-numeric:tabular-nums}
+  .agenda-item p{color:var(--muted);font-size:.93rem;margin:4px 0 0}
+  .tag{display:inline-block;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+  .tag-explore{color:#175cd3;background:#eff8ff}
+  .tag-learn{color:#6941c6;background:#f4f3ff}
+  .tag-decide{color:#b54708;background:#fffaeb}
+  .tag-do{color:#18794e;background:#ecfdf3}
+  .tag-create{color:#c11574;background:#fdf2fa}
+  .tag-examine{color:#b42318;background:#fef3f2}
+  details{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:15px 18px;margin:12px 0}
+  summary{cursor:pointer;font-weight:800;color:var(--navy)}
+  [data-theme="dark"] summary{color:#fff}
+  details[open] summary{margin-bottom:12px}
+  blockquote{margin:16px 0;padding:17px 20px;border-left:4px solid var(--teal);background:rgba(15,118,110,.06);border-radius:0 12px 12px 0;font-size:1.01rem}
+  .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 0}
+  .flow span{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-weight:700;font-size:.88rem}
+  .flow b{color:var(--gold)}
+  table{width:100%;border-collapse:collapse;background:var(--paper);border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  th,td{text-align:left;vertical-align:top;padding:13px 14px;border-bottom:1px solid var(--line);font-size:.92rem}
+  th{background:rgba(16,33,63,.06);color:var(--navy);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  [data-theme="dark"] th{color:#fff;background:rgba(255,255,255,.06)}
+  tr:last-child td{border-bottom:none}
+  .timeline{position:relative;margin-top:28px}
+  .timeline:before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .timeline-item{position:relative;padding:0 0 28px 48px}
+  .timeline-item:last-child{padding-bottom:0}
+  .dot{position:absolute;left:5px;top:3px;width:22px;height:22px;border-radius:50%;background:var(--teal);border:4px solid var(--cream);box-shadow:0 0 0 2px var(--teal)}
+  .timeline-step{font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);font-weight:800}
+  .timeline-item h3{margin-top:3px}
+  .timeline-item p{color:var(--muted)}
+  .patty{border-top:5px solid var(--gold)}
+  .minute-grid{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .minute-grid:last-child{border-bottom:none}
+  .minute{font-weight:850;color:var(--gold)}
+  .prompt{background:#0b1b32;color:#eef4ff;border-radius:13px;padding:18px 20px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88rem;overflow:auto}
+  .warning{border-left:5px solid var(--amber)}
+  .form-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+  label{display:block;font-weight:750;font-size:.9rem;margin-bottom:6px}
+  input,select,textarea{width:100%;border:1px solid #cdd3dc;border-radius:9px;background:var(--cream);color:var(--ink);padding:11px 12px;font:inherit}
+  textarea{min-height:110px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:3px solid rgba(20,184,166,.20);border-color:var(--teal)}
+  .full{grid-column:1/-1}
+  .checkboxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px}
+  .check{display:flex;align-items:flex-start;gap:8px;font-weight:500}
+  .check input{width:auto;margin-top:5px}
+  .form-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .privacy-note{font-size:.82rem;color:var(--muted);margin-top:13px}
+  #formStatus{min-height:24px;margin-top:10px;font-size:.88rem;color:var(--green);font-weight:700}
+  .sources{font-size:.9rem}
+  .sources li{margin-bottom:10px}
+  .footer{background:var(--navy);color:rgba(255,255,255,.78);padding:42px 22px;text-align:center}
+  .footer strong{color:#fff}
+  .footer a{color:var(--gold-2)}
+  .footer .mantra{color:#f8e3a7;font-style:italic;margin-top:11px}
+  @media(max-width:900px){.grid-4,.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}.nav-links a.nav-hide{display:none}}
+  @media(max-width:700px){.grid-2,.grid-3,.grid-4,.form-grid,.checkboxes{grid-template-columns:1fr}.agenda-item,.minute-grid{grid-template-columns:1fr;gap:4px}.full{grid-column:auto}.hero{padding-top:72px}.nav-links a{display:none}.nav-links .nav-button{display:inline-block}section{padding:48px 0}}
+  @media print{nav,.hero-actions,.form-card,.nav-button{display:none!important}.hero{padding:35px 0;background:#fff;color:#000}.hero .lead,.byline{color:#333}.eyebrow{color:#333;border-color:#aaa}.card,details,.agenda-item{box-shadow:none;break-inside:avoid}body{background:#fff}.wrap{max-width:none}a{color:#000;text-decoration:none}}
+</style>
+</head>
+<body data-theme="light">
+<a class="skip" href="#main">Skip to main content</a>
+<nav aria-label="Primary">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Robert Domondon <span>· Updates</span></a>
+    <ul class="nav-links">
+      <li><a class="nav-hide" href="#run-of-show">Run of Show</a></li>
+      <li><a class="nav-hide" href="#planning-history">Planning History</a></li>
+      <li><a class="nav-hide" href="#feedback">Feedback</a></li>
+      <li><a class="nav-hide" href="seed-garden.html">Seed Garden</a></li>
+      <li><button class="nav-button" type="button" onclick="toggleTheme()" aria-label="Toggle color theme">☾</button></li>
+    </ul>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Webinar Planning Archive · August 2026</div>
+    <h1>In Beautiful Flight</h1>
+    <p class="lead">A webinar series that gives nurses a public, practical space to explore what a personal AI system can do for them professionally and personally—while directly examining privacy, critical-thinking, infrastructure, and energy concerns.</p>
+    <div class="byline">
+      <span><strong>Created and moderated by:</strong> Patty Hsu</span>
+      <span><strong>Co-moderator:</strong> Robert Domondon</span>
+      <span><strong>Working program:</strong> Monday, August 17, 2026</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#run-of-show">View program</a>
+      <a class="btn btn-secondary" href="#planning-history">See planning history</a>
+      <a class="btn btn-secondary" href="#feedback">Give feedback</a>
+      <button class="btn btn-secondary" type="button" onclick="window.print()">Print brief</button>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <section>
+    <div class="wrap">
+      <div class="section-kicker">Series Charter</div>
+      <h2>What this webinar is designed to do</h2>
+      <p class="intro">The series is not a product pitch and not a clinical deployment tutorial. It is a guided exploration of personal AI as a nurse-controlled system for learning, planning, reflection, professional development, entrepreneurship, and non-PHI project work.</p>
+      <div class="callout"><strong>Audience promise:</strong> By the end of the program, a nurse should understand what a personal AI system is, what it can safely do, when a local installation may be useful, what its limits are, and how to define one governed first use case.</div>
+      <div class="grid grid-3">
+        <div class="card"><h3>Professional</h3><p>Career mapping, certification study, portfolio development, committee projects, presentations, business cases, and evidence-based planning.</p></div>
+        <div class="card"><h3>Personal</h3><p>Goals, routines, household projects, travel research, writing, creative work, and long-range planning—without pretending AI should make consequential life decisions.</p></div>
+        <div class="card"><h3>Governed</h3><p>No PHI, no unauthorized employer-confidential data, visible permissions, source grounding, human confirmation, and a clear stop path.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="search-signals">
+    <div class="wrap">
+      <div class="section-kicker">Search and Adoption Signals</div>
+      <h2>Why these topics are timely</h2>
+      <p class="intro">The episode structure follows how people are now using AI search: longer conversational questions, follow-up exploration, planning, professional development, study support, and practical creation. These figures frame the conversation; they do not prove that every nurse wants or needs the same system.</p>
+      <div class="grid grid-4" style="margin-top:24px">
+        <div class="card"><div class="stat">49%</div><div class="stat-label">of U.S. adults report using AI chatbots</div><div class="stat-note">Pew survey, February 2026; 24% report daily use.</div><a class="source-tag" href="https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/" target="_blank" rel="noopener">Pew Research</a></div>
+        <div class="card"><div class="stat">3×</div><div class="stat-label">longer average AI Mode query</div><div class="stat-note">Google reports conversational queries and follow-ups are expanding search behavior.</div><a class="source-tag" href="https://storage.googleapis.com/gweb-uniblog-publish-prod/documents/AI-Mode-US-Insights.pdf" target="_blank" rel="noopener">Google AI Mode</a></div>
+        <div class="card"><div class="stat">80%</div><div class="stat-label">faster growth for planning-related AI Mode queries</div><div class="stat-note">Relative to AI Mode queries overall during the preceding six months.</div><a class="source-tag" href="https://storage.googleapis.com/gweb-uniblog-publish-prod/documents/AI-Mode-US-Insights.pdf" target="_blank" rel="noopener">Google AI Mode</a></div>
+        <div class="card"><div class="stat">29.8M</div><div class="stat-label">nurses in the global workforce</div><div class="stat-note">WHO reports growth from 27.9M in 2018 to 29.8M in 2023.</div><a class="source-tag" href="https://www.who.int/news/item/12-05-2025-nursing-workforce-grows--but-inequities-threaten-global-health-goals" target="_blank" rel="noopener">World Health Organization</a></div>
+      </div>
+      <div class="callout"><strong>Search-informed editorial pattern:</strong> What is it? How does it work? Can it help me? Is it safe? What should I do next? The program moves through <em>Explore, Learn, Decide, Examine, Create, and Do.</em></div>
+    </div>
+  </section>
+
+  <section id="run-of-show">
+    <div class="wrap">
+      <div class="section-kicker">Production Draft</div>
+      <h2>60-minute broadcast + 15-minute “After the Flight”</h2>
+      <div class="agenda">
+        <div class="agenda-item"><div class="time">0:00–0:05</div><div><span class="tag tag-explore">Explore</span><h3>Opening: Why personal AI, and why now?</h3><p>Define a personal AI system and distinguish it from a one-off chatbot interaction.</p></div></div>
+        <div class="agenda-item"><div class="time">0:05–0:15</div><div><span class="tag tag-learn">Learn</span><h3>What a personal AI system can do for a nurse</h3><p>Professional development, personal administration, thinking partnership, and non-PHI project work.</p></div></div>
+        <div class="agenda-item"><div class="time">0:15–0:24</div><div><span class="tag tag-decide">Decide</span><h3>Local, cloud, or hybrid?</h3><p>Benefits of local installs, honest limitations, routing choice, and the importance of explicit data boundaries.</p></div></div>
+        <div class="agenda-item"><div class="time">0:24–0:39</div><div><span class="tag tag-examine">Examine</span><h3>The Objection Clinic</h3><p>Critical-thinking degradation, privacy, data-center growth, and the energy demands of frontier and agentic AI.</p></div></div>
+        <div class="agenda-item"><div class="time">0:39–0:54</div><div><span class="tag tag-create">Create</span><h3>Patty Hsu: “How I Did This”</h3><p>A 15-minute nurse-entrepreneur segment on building a dashboard, configuring a thinking partner, and forming a company.</p></div></div>
+        <div class="agenda-item"><div class="time">0:54–0:59</div><div><span class="tag tag-do">Do</span><h3>Design your first governed use case</h3><p>Each viewer defines a purpose, approved inputs, AI role, prohibited actions, human gate, and definition of done.</p></div></div>
+        <div class="agenda-item"><div class="time">0:59–1:00</div><div><span class="tag tag-explore">Close</span><h3>Stewardship, not dependency</h3><p>Agents propose. Humans judge. Nurses steward.</p></div></div>
+        <div class="agenda-item"><div class="time">1:00–1:15</div><div><span class="tag tag-do">After the Flight</span><h3>Audience questions and use-case triage</h3><p>Separate safe personal/professional use cases from activities that require institutional governance or should not proceed.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="segment-intros">
+    <div class="wrap">
+      <div class="section-kicker">Moderator Script</div>
+      <h2>Ready-to-read introductions with supporting data</h2>
+      <details open>
+        <summary>Opening introduction</summary>
+        <blockquote>“About half of U.S. adults now report using an AI chatbot, and nearly one in four uses one daily. But most people still experience AI as a blank chat box: ask a question, receive an answer, and leave. A personal AI system is more deliberate. It can organize goals, projects, learning, and decisions—but only inside boundaries the person understands and controls.”</blockquote>
+        <p><strong>Transition question:</strong> What can a personal AI system do for a nurse without taking away the nurse’s judgment, privacy, or agency?</p>
+      </details>
+      <details>
+        <summary>Introduction to professional and personal uses</summary>
+        <blockquote>“Google’s AI-search analysis shows strong interest in planning, practical tasks, education, personal and professional development, and creation. Nursing appears among leading subjects for AI-generated study guides, and NCLEX appears among frequently searched credentials. Nurses are moving beyond ‘What is AI?’ toward ‘How can this help me learn, plan, and create?’”</blockquote>
+      </details>
+      <details>
+        <summary>Introduction to local installations</summary>
+        <blockquote>“Privacy concern is not a fringe objection. Seventy-one percent of U.S. adults say increased AI use will make personal information less secure. A local installation can move more control onto equipment the user owns—but local does not automatically mean private, secure, accurate, or energy-efficient. The real question is whether the system makes its data boundary, permissions, network calls, and stop controls visible.”</blockquote>
+      </details>
+      <details>
+        <summary>Introduction to critical-thinking concerns</summary>
+        <blockquote>“A Microsoft Research study surveyed 319 knowledge workers and collected 936 examples of AI-assisted work. Higher confidence in generative AI was associated with less reported critical thinking, while higher confidence in one’s own ability was associated with more. It was correlational and self-reported, not proof of permanent cognitive decline—but it identifies a real overreliance risk.”</blockquote>
+      </details>
+      <details>
+        <summary>Introduction to energy and data centers</summary>
+        <blockquote>“The physical cost of AI is real. The International Energy Agency reports that global data-center electricity demand rose 17 percent in 2025, while AI-focused data centers rose even faster. Efficiency per task is improving quickly, but more people are using AI and more energy-intensive applications—such as reasoning, video, and agents—are growing.”</blockquote>
+      </details>
+    </div>
+  </section>
+
+  <section id="personal-ai">
+    <div class="wrap">
+      <div class="section-kicker">Demonstration Framework</div>
+      <h2>What distinguishes a personal AI system from a chatbot?</h2>
+      <div class="flow" aria-label="Personal AI system flow">
+        <span>The nurse</span><b>→</b><span>Mission Control dashboard</span><b>→</b><span>Thinking-partner AI</span><b>→</b><span>Goals · projects · learning · business</span><b>→</b><span>Permissioned tools and files</span><b>→</b><span>Human review and decision</span>
+      </div>
+      <div class="grid grid-2">
+        <div class="card"><h3>Professional growth</h3><p>Career mapping, certification planning, competency gaps, portfolios, clinical-ladder preparation, presentations, and proof-of-work.</p></div>
+        <div class="card"><h3>Non-PHI work</h3><p>Committee agendas, generic workflow maps, project options, evaluation rubrics, business cases, and meeting preparation.</p></div>
+        <div class="card"><h3>Personal administration</h3><p>Weekly planning, household projects, travel research, personal writing, learning goals, and long-range project tracking.</p></div>
+        <div class="card"><h3>Thinking partnership</h3><p>Clarifying questions, alternative paths, assumption checks, counterarguments, evidence gaps, and decision logs.</p></div>
+      </div>
+      <div class="prompt" aria-label="Example thinking partner prompt">Do not solve this immediately. First ask what I already believe. Identify my assumptions, present the strongest counterargument, distinguish facts from inferences, and tell me what requires human verification.</div>
+    </div>
+  </section>
+
+  <section id="local-ai">
+    <div class="wrap">
+      <div class="section-kicker">Architecture Choice</div>
+      <h2>Local, cloud, and hybrid—without false binaries</h2>
+      <table>
+        <thead><tr><th>Model</th><th>Where it runs</th><th>Potential strength</th><th>Principal limitation</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cloud AI</strong></td><td>Provider-controlled data centers</td><td>Frontier-model capability and managed infrastructure</td><td>Data leaves the device; ongoing reliance on provider controls</td></tr>
+          <tr><td><strong>Local AI</strong></td><td>User-controlled computer</td><td>Private context, offline use, visible local files, and lower latency for some tasks</td><td>Hardware limits, maintenance, software updates, and sometimes weaker models</td></tr>
+          <tr><td><strong>Hybrid AI</strong></td><td>Local system plus selective cloud calls</td><td>Local control with governed access to stronger models when justified</td><td>Requires transparent routing, redaction, permissions, and auditability</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Positioning:</strong> Local-first where privacy, continuity, and control matter; governed cloud access where additional capability is justified. Not “local good, cloud bad.”</div>
+      <div class="grid grid-3">
+        <div class="card"><h3>Potential local benefits</h3><p>Private context, data minimization, explicit folder access, offline continuity, reversibility, and user-selected model routing.</p></div>
+        <div class="card warning"><h3>Limitations to state openly</h3><p>Compromised devices, undisclosed external calls, credentials, backups, updates, hardware limits, and continued energy use.</p></div>
+        <div class="card"><h3>Boundary for this series</h3><p>Personal and professional development only. No PHI, patient-specific care, unauthorized employer data, or autonomous consequential actions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="objections">
+    <div class="wrap">
+      <div class="section-kicker">The Objection Clinic</div>
+      <h2>Meet the criticism with evidence, not defensiveness</h2>
+      <div class="grid grid-2">
+        <div class="card"><h3>“AI will degrade critical thinking.”</h3><p><strong>Evidence:</strong> Microsoft Research found an association between greater confidence in GenAI and less reported critical thinking in a survey of 319 knowledge workers.</p><p><strong>Response:</strong> Human position first → AI challenge → evidence inspection → human judgment.</p></div>
+        <div class="card"><h3>“AI will take or expose my data.”</h3><p><strong>Evidence:</strong> 71% of U.S. adults expect AI to make personal information less secure; 79% of nonusers cite data-use concern.</p><p><strong>Response:</strong> Show the data boundary, permissions, storage location, allowed destinations, confirmation points, and stop control.</p></div>
+        <div class="card"><h3>“AI data centers use too much energy.”</h3><p><strong>Evidence:</strong> IEA reports data-center electricity demand rose 17% in 2025; AI-focused centers rose faster, while high-intensity agentic uses are expanding.</p><p><strong>Response:</strong> Use ordinary software when enough, smaller models for routine work, local routing where appropriate, and frontier models only when value warrants it.</p></div>
+        <div class="card"><h3>“A working demo must be ready to trust.”</h3><p><strong>Evidence:</strong> Capability is not the same as approval or authorization.</p><p><strong>Response:</strong> Separate publication, review, authorization, execution, monitoring, and revocation.</p></div>
+      </div>
+      <div class="callout"><strong>Energy-aware orchestration question:</strong> Does this task require AI at all—and, if so, what is the smallest sufficient intelligence for the job?</div>
+    </div>
+  </section>
+
+  <section id="patty-segment">
+    <div class="wrap">
+      <div class="section-kicker">Nurse Entrepreneur Spotlight</div>
+      <h2>Patty Hsu — “How I Did This”</h2>
+      <div class="card patty">
+        <p><strong>15-minute purpose:</strong> Show nurse entrepreneurs the practical path from scattered expertise to a visible dashboard, a deliberately configured thinking partner, and a company-building operating rhythm.</p>
+        <blockquote>“There are approximately 29.8 million nurses worldwide—an enormous reservoir of frontline expertise and lived problems. AI is also becoming part of ordinary business formation: Census data found 18% of U.S. firms used AI in at least one business function during late 2025 and early 2026. Among adopters, the most common functions were sales and marketing, strategy and business development, and IT.”</blockquote>
+        <p class="stat-note">A separate U.S. Chamber survey found 58% of small businesses self-identified as using generative AI in 2025. The Census and Chamber findings use different methods and definitions and should not be directly compared.</p>
+        <div class="minute-grid"><div class="minute">0:00–2:00</div><div><h3>Before the dashboard</h3><p>What was fragmented? What did Patty repeatedly lose track of? Why were ordinary task lists insufficient?</p></div></div>
+        <div class="minute-grid"><div class="minute">2:00–5:00</div><div><h3>What is on the dashboard?</h3><p>Mission, priorities, projects, next actions, decisions, evidence, people, metrics, dormant ideas, and weekly review.</p></div></div>
+        <div class="minute-grid"><div class="minute">5:00–8:00</div><div><h3>How she configured a thinking partner</h3><p>Purpose, audience, values, preferred work style, evidence requirements, allowed actions, refusals, and when the AI must challenge or stop.</p></div></div>
+        <div class="minute-grid"><div class="minute">8:00–12:00</div><div><h3>From nursing expertise to a company</h3><p>Problem → person affected → service or product → minimum test → feedback → change → next decision.</p></div></div>
+        <div class="minute-grid"><div class="minute">12:00–14:00</div><div><h3>What did not work</h3><p>One bad AI answer, one missed assumption, one overbuilt dashboard element, one human-only task, and one boundary added after experience.</p></div></div>
+        <div class="minute-grid"><div class="minute">14:00–15:00</div><div><h3>Three instructions to nurse entrepreneurs</h3><p>Start with a firsthand problem. Build a simple dashboard before a complicated product. Configure AI to organize and question you—not impersonate your authority.</p></div></div>
+        <div class="prompt">Review my current business priority. Before recommending anything, identify the customer assumption I am making, the evidence supporting it, the evidence missing, the lowest-cost test, and the decision that must remain mine.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="audience-exercise">
+    <div class="wrap">
+      <div class="section-kicker">Audience Takeaway</div>
+      <h2>Design one safe first use case</h2>
+      <p class="intro">The objective is not for every nurse to install a model or start a company. The objective is to identify one useful, non-PHI problem and define how AI may assist without taking over the decision.</p>
+      <table>
+        <thead><tr><th>Field</th><th>Question</th></tr></thead>
+        <tbody>
+          <tr><td>Purpose</td><td>What problem am I trying to solve?</td></tr>
+          <tr><td>Inputs</td><td>What non-PHI, nurse-controlled information may the system use?</td></tr>
+          <tr><td>AI role</td><td>May it research, organize, summarize, challenge, draft, or track?</td></tr>
+          <tr><td>Prohibited actions</td><td>What must it never access, decide, publish, send, or modify?</td></tr>
+          <tr><td>Human gate</td><td>What requires explicit human approval?</td></tr>
+          <tr><td>Definition of done</td><td>How will I judge usefulness, accuracy, and completion?</td></tr>
+        </tbody>
+      </table>
+      <div class="prompt">Help me with [defined non-PHI task] using only [approved sources or files]. You may [allowed actions]. You may not [prohibited actions]. Before [consequential step], stop and request my approval. Separate facts, assumptions, and recommendations. I will verify the result using [criteria or source].</div>
+    </div>
+  </section>
+
+  <section id="planning-history">
+    <div class="wrap">
+      <div class="section-kicker">Planning Archive</div>
+      <h2>History of the planning sessions</h2>
+      <p class="intro">This page preserves the sequence of decisions so future programs can see not only what was selected, but why.</p>
+      <div class="timeline">
+        <div class="timeline-item"><div class="dot"></div><div class="timeline-step">Planning Session 1</div><h3>Purpose and audience defined</h3><p>The program was reframed for the general public of nurses: explore personal AI professionally and personally, rather than present an institutional architecture lecture.</p></div>
+        <div class="timeline-item"><div class="dot"></div><div class="timeline-step">Planning Session 2</div><h3>Local installations elevated</h3><p>The team identified local-first personal AI as a central topic, while refusing the simplistic claim that local automatically means secure, private, accurate, or environmentally superior.</p></div>
+        <div class="timeline-item"><div class="dot"></div><div class="timeline-step">Planning Session 3</div><h3>Objections became a formal segment</h3><p>Critical-thinking degradation, data privacy, data-center infrastructure, frontier-model energy needs, and the right-sized use of AI were moved into an evidence-led “Objection Clinic.”</p></div>
+        <div class="timeline-item"><div class="dot"></div><div class="timeline-step">Planning Session 4</div><h3>Search behavior shaped the format</h3><p>Google’s Explore, Decide, Learn, Do, and Create behaviors—and the dominant first words What, How, I, Is, and Can—were used to make the episode reflect contemporary questions.</p></div>
+        <div class="timeline-item"><div class="dot"></div><div class="timeline-step">Planning Session 5</div><h3>Patty’s entrepreneur story added</h3><p>A dedicated 15-minute segment was created for Patty to show how she built her dashboard, configured a thinking partner, and used it to help build a company.</p></div>
+        <div class="timeline-item"><div class="dot"></div><div class="timeline-step">Current Production Draft</div><h3>One-hour webinar plus audience discussion</h3><p>The program now follows a coherent arc: define personal AI, demonstrate value, compare deployment options, meet objections, show a lived entrepreneurial example, and leave viewers with one governed action.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sources">
+    <div class="wrap">
+      <div class="section-kicker">Source Notes</div>
+      <h2>Data used to frame the program</h2>
+      <ol class="sources">
+        <li><a href="https://storage.googleapis.com/gweb-uniblog-publish-prod/documents/AI-Mode-US-Insights.pdf" target="_blank" rel="noopener">Google Search — AI Mode U.S. Insights</a>: query length, follow-up growth, top first words, Explore/Decide/Learn/Do/Create, planning growth, nursing study-guide interest, and NCLEX search interest.</li>
+        <li><a href="https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/" target="_blank" rel="noopener">Pew Research Center — Americans and AI 2026</a>: chatbot use, daily use, privacy expectations, and public attitudes.</li>
+        <li><a href="https://www.pewresearch.org/chart/lack-of-interest-concerns-around-privacy-and-accuracy-are-common-reasons-why-people-dont-use-chatbots/" target="_blank" rel="noopener">Pew Research Center — Reasons for nonuse</a>: privacy, accuracy, lack of interest, and usability concerns.</li>
+        <li><a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/" target="_blank" rel="noopener">Microsoft Research — Generative AI and critical thinking</a>: 319 knowledge workers and 936 examples.</li>
+        <li><a href="https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions" target="_blank" rel="noopener">International Energy Agency — Data-center electricity use in 2025</a>.</li>
+        <li><a href="https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary" target="_blank" rel="noopener">International Energy Agency — Key Questions on Energy and AI</a>: efficiency improvements and the higher intensity of reasoning, video, and agentic workloads.</li>
+        <li><a href="https://www.who.int/news/item/12-05-2025-nursing-workforce-grows--but-inequities-threaten-global-health-goals" target="_blank" rel="noopener">World Health Organization — State of the nursing workforce</a>: 29.8 million nurses globally in 2023.</li>
+        <li><a href="https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html" target="_blank" rel="noopener">U.S. Census Bureau — Microstructure of AI Diffusion</a>: firm adoption and leading business functions.</li>
+        <li><a href="https://www.uschamber.com/technology/empowering-small-business-the-impact-of-technology-on-u-s-small-business" target="_blank" rel="noopener">U.S. Chamber of Commerce — Empowering Small Business</a>: self-reported generative-AI use among surveyed small businesses. Methodology differs from Census data.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="feedback">
+    <div class="wrap">
+      <div class="section-kicker">Community Review</div>
+      <h2>Feedback form</h2>
+      <p class="intro">Help Patty and Robert refine the next flight. This static page does not store submissions. “Prepare email” opens your email application with the feedback populated; “Copy feedback” lets you paste it anywhere.</p>
+      <div class="form-card">
+        <form id="feedbackForm">
+          <div class="form-grid">
+            <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" placeholder="Optional"></div>
+            <div><label for="role">Nursing role or perspective</label><input id="role" name="role" placeholder="Bedside RN, educator, entrepreneur, student..."></div>
+            <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="Optional, only for follow-up"></div>
+            <div><label for="rating">Overall program rating</label><select id="rating" name="rating"><option value="">Select</option><option>5 — Excellent</option><option>4 — Strong</option><option>3 — Useful, needs refinement</option><option>2 — Limited value</option><option>1 — Needs redesign</option></select></div>
+            <div class="full"><label for="useful">Which segment is most useful, and why?</label><textarea id="useful" name="useful" placeholder="Personal AI, local installs, objections, Patty's story, first-use exercise..."></textarea></div>
+            <div class="full"><label for="concern">What concern or objection should the moderators address more directly?</label><textarea id="concern" name="concern" placeholder="Critical thinking, privacy, energy, accuracy, cost, accessibility, equity..."></textarea></div>
+            <div class="full"><label for="future">What should a future In Beautiful Flight program explore?</label><textarea id="future" name="future" placeholder="Suggested topic, guest, demonstration, or nurse use case"></textarea></div>
+            <div class="full"><label>Participation interest</label><div class="checkboxes">
+              <label class="check"><input type="checkbox" name="interest" value="Attend a future webinar">Attend a future webinar</label>
+              <label class="check"><input type="checkbox" name="interest" value="Share a nurse AI story">Share a nurse AI story</label>
+              <label class="check"><input type="checkbox" name="interest" value="Demonstrate a personal AI workflow">Demonstrate a personal AI workflow</label>
+              <label class="check"><input type="checkbox" name="interest" value="Join a nurse entrepreneur discussion">Join a nurse entrepreneur discussion</label>
+            </div></div>
+            <div class="full"><label for="other">Additional comments</label><textarea id="other" name="other" placeholder="Anything else Patty and Robert should know"></textarea></div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Prepare email</button>
+            <button class="btn btn-light" type="button" onclick="copyFeedback()">Copy feedback</button>
+            <button class="btn btn-light" type="reset">Clear form</button>
+          </div>
+          <div id="formStatus" aria-live="polite"></div>
+          <p class="privacy-note">Feedback is addressed to great.ai.nurses@gmail.com. No response is uploaded to GitHub or retained by this page.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <strong>In Beautiful Flight</strong><br>
+  Created and moderated by Patty Hsu · Robert Domondon, co-moderator<br>
+  <a href="index.html">Robert’s Update</a> · <a href="seed-garden.html">Seed Garden</a> · <a href="kanban.html">Kanban</a>
+  <div class="mantra">Demonstrate capability. Meet objections with evidence. Leave every nurse with one safe action.</div>
+</footer>
+<script>
+  const feedbackEmail = 'great.ai.nurses@gmail.com';
+  function toggleTheme(){
+    const body=document.body;
+    const next=body.getAttribute('data-theme')==='dark'?'light':'dark';
+    body.setAttribute('data-theme',next);
+    localStorage.setItem('beautiful-flight-theme',next);
+    const button=document.querySelector('.nav-button');
+    if(button) button.textContent=next==='dark'?'☀':'☾';
+  }
+  (function(){
+    const saved=localStorage.getItem('beautiful-flight-theme');
+    if(saved==='dark'){
+      document.body.setAttribute('data-theme','dark');
+      const button=document.querySelector('.nav-button');
+      if(button) button.textContent='☀';
+    }
+  })();
+  function buildFeedback(){
+    const form=document.getElementById('feedbackForm');
+    const interests=[...form.querySelectorAll('input[name="interest"]:checked')].map(i=>i.value).join(', ')||'None selected';
+    return [
+      'IN BEAUTIFUL FLIGHT — WEBINAR FEEDBACK',
+      '',
+      'Name: '+(form.name.value||'Not provided'),
+      'Role/perspective: '+(form.role.value||'Not provided'),
+      'Email: '+(form.email.value||'Not provided'),
+      'Rating: '+(form.rating.value||'Not provided'),
+      '',
+      'Most useful segment:',
+      form.useful.value||'No response',
+      '',
+      'Concern or objection to address:',
+      form.concern.value||'No response',
+      '',
+      'Future program suggestion:',
+      form.future.value||'No response',
+      '',
+      'Participation interest: '+interests,
+      '',
+      'Additional comments:',
+      form.other.value||'No response'
+    ].join('\n');
+  }
+  document.getElementById('feedbackForm').addEventListener('submit',function(event){
+    event.preventDefault();
+    const body=buildFeedback();
+    const subject='In Beautiful Flight Webinar Feedback';
+    document.getElementById('formStatus').textContent='Opening your email application. This page stores nothing.';
+    window.location.href='mailto:'+feedbackEmail+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  });
+  async function copyFeedback(){
+    const text=buildFeedback();
+    const status=document.getElementById('formStatus');
+    try{
+      await navigator.clipboard.writeText(text);
+      status.textContent='Feedback copied to your clipboard.';
+    }catch(error){
+      status.textContent='Clipboard access was blocked. Select the form text manually or use “Prepare email.”';
+    }
+  }
+</script>
+</body>
+</html>
