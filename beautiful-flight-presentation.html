@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Audience-facing presentation deck for In Beautiful Flight: What Can a Personal AI System Do for a Nurse?">
+<title>In Beautiful Flight — Audience Presentation</title>
+<style>
+  :root{
+    --navy:#0b1d39;
+    --navy-2:#16335d;
+    --teal:#0f766e;
+    --teal-2:#2dd4bf;
+    --sky:#dff4ff;
+    --sky-2:#effbff;
+    --gold:#d4a017;
+    --cream:#fbfaf5;
+    --paper:#ffffff;
+    --ink:#152238;
+    --muted:#5c6b7c;
+    --line:rgba(21,34,56,.14);
+    --green:#16794f;
+    --amber:#bd6a12;
+    --red:#b42318;
+    --shadow:0 22px 70px rgba(11,29,57,.16);
+    --radius:28px;
+  }
+  *{box-sizing:border-box}
+  html{
+    scroll-snap-type:y mandatory;
+    scroll-behavior:smooth;
+    background:var(--navy);
+  }
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--navy);
+    overflow-x:hidden;
+  }
+  a{color:inherit}
+  button{font:inherit}
+  .slide{
+    min-height:100vh;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+    position:relative;
+    display:grid;
+    place-items:center;
+    padding:56px 76px;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .slide::before,
+  .slide::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    filter:blur(1px);
+    opacity:.55;
+    z-index:-2;
+  }
+  .slide::before{
+    width:34vw;height:34vw;
+    right:-12vw;top:-15vw;
+    background:radial-gradient(circle,rgba(45,212,191,.32),rgba(45,212,191,0) 70%);
+  }
+  .slide::after{
+    width:28vw;height:28vw;
+    left:-11vw;bottom:-13vw;
+    background:radial-gradient(circle,rgba(212,160,23,.23),rgba(212,160,23,0) 70%);
+  }
+  .light{background:linear-gradient(145deg,var(--cream),var(--sky-2));}
+  .sky{background:linear-gradient(145deg,#eefaff 0%,#dff3ff 48%,#f9f4df 100%);}
+  .deep{background:linear-gradient(145deg,#07162d,#102f59 58%,#0c5f5c);color:white;}
+  .teal{background:linear-gradient(145deg,#063d3b,#0f766e 58%,#0b1d39);color:white;}
+  .gold{background:linear-gradient(145deg,#5f4210,#b7791f 58%,#0b1d39);color:white;}
+  .warning{background:linear-gradient(145deg,#fff9ef,#fff0dd 58%,#f7fbff);}
+  .frame{
+    width:min(1220px,100%);
+    min-height:min(76vh,760px);
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:var(--radius);
+    background:rgba(255,255,255,.84);
+    box-shadow:var(--shadow);
+    backdrop-filter:blur(18px);
+    padding:58px 64px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:relative;
+  }
+  .deep .frame,.teal .frame,.gold .frame{
+    color:white;
+    background:rgba(7,22,45,.58);
+    border-color:rgba(255,255,255,.18);
+  }
+  .kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    width:max-content;
+    max-width:100%;
+    padding:8px 14px;
+    border-radius:999px;
+    border:1px solid rgba(15,118,110,.24);
+    background:rgba(15,118,110,.09);
+    color:var(--teal);
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .deep .kicker,.teal .kicker,.gold .kicker{
+    color:#a7f3d0;
+    border-color:rgba(167,243,208,.28);
+    background:rgba(167,243,208,.09);
+  }
+  h1,h2,h3,p{margin-top:0}
+  h1{
+    font-size:clamp(50px,7vw,96px);
+    line-height:.98;
+    letter-spacing:-.055em;
+    margin-bottom:24px;
+    max-width:1050px;
+  }
+  h2{
+    font-size:clamp(40px,5.4vw,74px);
+    line-height:1.02;
+    letter-spacing:-.045em;
+    margin-bottom:24px;
+    max-width:1050px;
+  }
+  h3{
+    font-size:clamp(22px,2.6vw,34px);
+    line-height:1.15;
+    letter-spacing:-.025em;
+    margin-bottom:14px;
+  }
+  .lead{
+    font-size:clamp(22px,2.3vw,34px);
+    line-height:1.35;
+    max-width:970px;
+    color:var(--muted);
+    margin-bottom:0;
+  }
+  .deep .lead,.teal .lead,.gold .lead{color:rgba(255,255,255,.78)}
+  .sublead{
+    font-size:clamp(17px,1.7vw,23px);
+    line-height:1.5;
+    color:var(--muted);
+    max-width:1000px;
+  }
+  .deep .sublead,.teal .sublead,.gold .sublead{color:rgba(255,255,255,.72)}
+  .hero-mark{
+    font-size:clamp(50px,8vw,112px);
+    line-height:1;
+    margin-bottom:24px;
+  }
+  .byline{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 22px;
+    margin-top:30px;
+    font-size:18px;
+    color:rgba(255,255,255,.72);
+  }
+  .byline strong{color:white}
+  .grid{
+    display:grid;
+    gap:22px;
+    margin-top:18px;
+  }
+  .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .card{
+    padding:28px;
+    border-radius:22px;
+    background:rgba(255,255,255,.86);
+    border:1px solid var(--line);
+    box-shadow:0 10px 28px rgba(11,29,57,.07);
+  }
+  .deep .card,.teal .card,.gold .card{
+    background:rgba(255,255,255,.08);
+    border-color:rgba(255,255,255,.16);
+    box-shadow:none;
+  }
+  .card p{
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.45;
+    margin-bottom:0;
+  }
+  .deep .card p,.teal .card p,.gold .card p{color:rgba(255,255,255,.75)}
+  .icon{
+    width:52px;height:52px;
+    display:grid;place-items:center;
+    border-radius:16px;
+    background:rgba(15,118,110,.1);
+    font-size:28px;
+    margin-bottom:18px;
+  }
+  .deep .icon,.teal .icon,.gold .icon{background:rgba(255,255,255,.11)}
+  .stat-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:24px;
+    margin-top:26px;
+  }
+  .stat-card{
+    padding:34px 28px;
+    border-radius:24px;
+    background:rgba(255,255,255,.87);
+    border:1px solid var(--line);
+    text-align:center;
+  }
+  .deep .stat-card,.teal .stat-card,.gold .stat-card{
+    background:rgba(255,255,255,.08);
+    border-color:rgba(255,255,255,.16);
+  }
+  .stat{
+    font-size:clamp(48px,6vw,82px);
+    line-height:1;
+    font-weight:900;
+    letter-spacing:-.06em;
+    color:var(--teal);
+    margin-bottom:12px;
+  }
+  .deep .stat,.teal .stat,.gold .stat{color:#67e8f9}
+  .stat-label{
+    font-size:20px;
+    font-weight:750;
+    line-height:1.25;
+  }
+  .stat-note{
+    margin-top:10px;
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.35;
+  }
+  .deep .stat-note,.teal .stat-note,.gold .stat-note{color:rgba(255,255,255,.62)}
+  .compare{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    gap:28px;
+    align-items:stretch;
+    margin-top:20px;
+  }
+  .compare .panel{
+    padding:34px;
+    border-radius:24px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.8);
+  }
+  .compare .arrow{
+    display:grid;
+    place-items:center;
+    font-size:50px;
+    color:var(--teal);
+  }
+  .list{
+    display:grid;
+    gap:13px;
+    margin:18px 0 0;
+    padding:0;
+    list-style:none;
+  }
+  .list li{
+    display:flex;
+    align-items:flex-start;
+    gap:13px;
+    font-size:clamp(18px,1.75vw,25px);
+    line-height:1.35;
+  }
+  .list li::before{
+    content:"";
+    width:11px;height:11px;
+    flex:0 0 11px;
+    border-radius:50%;
+    background:var(--teal);
+    margin-top:.55em;
+  }
+  .deep .list li::before,.teal .list li::before,.gold .list li::before{background:#5eead4}
+  .checklist{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px 28px;
+    margin-top:18px;
+  }
+  .check{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:clamp(17px,1.55vw,22px);
+    line-height:1.35;
+  }
+  .check::before{
+    content:"✓";
+    font-weight:900;
+    color:var(--green);
+  }
+  .danger::before{content:"×";color:var(--red)}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:12px;
+    align-items:center;
+    margin-top:30px;
+  }
+  .flow-step{
+    min-height:132px;
+    border-radius:22px;
+    padding:22px 16px;
+    background:rgba(15,118,110,.09);
+    border:1px solid rgba(15,118,110,.22);
+    display:grid;
+    place-items:center;
+    text-align:center;
+    font-size:20px;
+    font-weight:800;
+  }
+  .flow-arrow{font-size:30px;color:var(--teal);text-align:center}
+  .loop{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:18px;
+    margin-top:26px;
+  }
+  .loop-item{
+    padding:24px;
+    border-radius:22px;
+    text-align:center;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.76);
+  }
+  .loop-number{
+    width:44px;height:44px;
+    border-radius:50%;
+    display:grid;place-items:center;
+    margin:0 auto 14px;
+    font-size:20px;
+    font-weight:900;
+    background:var(--teal);
+    color:white;
+  }
+  .quote{
+    font-size:clamp(30px,4.2vw,58px);
+    line-height:1.16;
+    letter-spacing:-.035em;
+    font-weight:850;
+    max-width:1050px;
+  }
+  .quote em{color:var(--teal);font-style:normal}
+  .deep .quote em,.teal .quote em,.gold .quote em{color:#5eead4}
+  .mini-label{
+    font-size:14px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--teal);
+    margin-bottom:8px;
+  }
+  .source{
+    position:absolute;
+    left:64px;
+    bottom:22px;
+    right:64px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:end;
+    font-size:12px;
+    line-height:1.3;
+    color:rgba(21,34,56,.54);
+  }
+  .deep .source,.teal .source,.gold .source{color:rgba(255,255,255,.44)}
+  .source a{text-decoration:none;border-bottom:1px dotted currentColor}
+  .slide-no{font-weight:800;white-space:nowrap}
+  .big-number{
+    font-size:clamp(90px,14vw,190px);
+    font-weight:950;
+    letter-spacing:-.08em;
+    line-height:.85;
+    color:var(--teal);
+  }
+  .deep .big-number,.teal .big-number,.gold .big-number{color:#67e8f9}
+  .split{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:48px;
+    align-items:center;
+  }
+  .pill-row{
+    display:flex;flex-wrap:wrap;gap:12px;margin-top:24px
+  }
+  .pill{
+    padding:10px 15px;
+    border-radius:999px;
+    font-size:16px;
+    font-weight:750;
+    background:rgba(15,118,110,.1);
+    border:1px solid rgba(15,118,110,.2);
+  }
+  .deep .pill,.teal .pill,.gold .pill{
+    background:rgba(255,255,255,.1);
+    border-color:rgba(255,255,255,.18);
+  }
+  .boundary{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:22px;
+  }
+  .boundary-card{
+    border-radius:22px;
+    padding:26px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.77);
+  }
+  .boundary-card strong{
+    display:block;
+    font-size:22px;
+    margin-bottom:9px;
+  }
+  .boundary-card p{color:var(--muted);font-size:17px;margin:0}
+  .boundary-card.good{border-top:6px solid var(--green)}
+  .boundary-card.caution{border-top:6px solid var(--amber)}
+  .boundary-card.stop{border-top:6px solid var(--red)}
+  .prompt{
+    margin-top:26px;
+    padding:28px 30px;
+    border-radius:22px;
+    background:#081a33;
+    color:#dff8f5;
+    font-size:clamp(17px,1.6vw,22px);
+    line-height:1.5;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);
+  }
+  .qr-wrap{
+    display:grid;
+    grid-template-columns:1fr 340px;
+    gap:48px;
+    align-items:center;
+  }
+  .qr{
+    background:white;
+    border-radius:28px;
+    padding:24px;
+    box-shadow:0 18px 50px rgba(11,29,57,.18);
+  }
+  .qr img,.qr svg{display:block;width:100%;height:auto}
+  .controls{
+    position:fixed;
+    z-index:50;
+    right:18px;
+    top:18px;
+    display:flex;
+    gap:8px;
+    align-items:center;
+    padding:8px;
+    border-radius:16px;
+    background:rgba(7,22,45,.76);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 10px 28px rgba(0,0,0,.18);
+  }
+  .controls button,.controls a{
+    border:0;
+    color:white;
+    background:rgba(255,255,255,.08);
+    border-radius:11px;
+    min-width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    cursor:pointer;
+    text-decoration:none;
+    font-size:17px;
+  }
+  .controls button:hover,.controls a:hover{background:rgba(255,255,255,.16)}
+  .counter{
+    color:white;
+    font-size:13px;
+    font-weight:800;
+    padding:0 6px;
+    min-width:56px;
+    text-align:center;
+  }
+  .progress{
+    position:fixed;
+    left:0;top:0;
+    height:5px;
+    background:linear-gradient(90deg,var(--teal-2),var(--gold));
+    width:0;
+    z-index:80;
+    transition:width .2s linear;
+  }
+  .menu{
+    position:fixed;
+    inset:0;
+    z-index:90;
+    background:rgba(7,22,45,.94);
+    color:white;
+    display:none;
+    padding:60px;
+    overflow:auto;
+  }
+  .menu.open{display:block}
+  .menu-inner{max-width:1050px;margin:0 auto}
+  .menu h2{font-size:46px}
+  .menu-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;
+    margin-top:24px;
+  }
+  .menu a{
+    text-decoration:none;
+    padding:14px 16px;
+    border-radius:12px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+  }
+  .menu a:hover{background:rgba(255,255,255,.16)}
+  .menu-close{
+    position:fixed;right:24px;top:24px;
+    border:0;background:white;color:var(--navy);
+    border-radius:12px;padding:10px 14px;font-weight:800;cursor:pointer
+  }
+  @media(max-width:980px){
+    .slide{padding:40px 34px}
+    .frame{padding:42px 36px;min-height:82vh}
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:1fr}
+    .stat-grid{grid-template-columns:1fr}
+    .split,.qr-wrap{grid-template-columns:1fr}
+    .compare{grid-template-columns:1fr}
+    .compare .arrow{transform:rotate(90deg)}
+    .flow{grid-template-columns:1fr}
+    .flow-arrow{transform:rotate(90deg)}
+    .loop{grid-template-columns:repeat(2,1fr)}
+    .boundary{grid-template-columns:1fr}
+    .source{left:36px;right:36px}
+    .menu-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:620px){
+    html{scroll-snap-type:none}
+    .slide{padding:24px 14px;min-height:auto}
+    .frame{padding:34px 24px;min-height:94vh}
+    .grid-2,.grid-4,.loop,.checklist{grid-template-columns:1fr}
+    .source{position:static;margin-top:30px;display:block}
+    .source .slide-no{display:block;margin-top:8px}
+    .controls{right:8px;top:8px;transform:scale(.88);transform-origin:top right}
+    .menu{padding:70px 20px 30px}
+    .menu-grid{grid-template-columns:1fr}
+    .qr{max-width:300px;margin:0 auto}
+  }
+  @media print{
+    html,body{background:white;scroll-snap-type:none}
+    .slide{min-height:100vh;page-break-after:always;padding:18mm}
+    .frame{box-shadow:none;min-height:0;border:1px solid #ddd}
+    .controls,.progress,.menu{display:none!important}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .progress{transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="controls" aria-label="Presentation controls">
+  <button type="button" onclick="previousSlide()" title="Previous slide">↑</button>
+  <div class="counter" id="counter">1 / 30</div>
+  <button type="button" onclick="nextSlide()" title="Next slide">↓</button>
+  <button type="button" onclick="toggleMenu()" title="Slide index">☰</button>
+  <button type="button" onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
+  <a href="beautiful-flight.html" title="Planning archive">↗</a>
+</div>
+<div class="menu" id="menu" aria-hidden="true">
+  <button class="menu-close" type="button" onclick="toggleMenu()">Close</button>
+  <div class="menu-inner">
+    <div class="kicker">Presenter index</div>
+    <h2>In Beautiful Flight</h2>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</div>
+
+<section class="slide deep" id="slide-1" data-title="Title">
+  <div class="frame">
+    <div class="hero-mark">✦</div>
+    <div class="kicker">In Beautiful Flight · Webinar Series</div>
+    <h1>What Can a Personal AI System Do for a Nurse?</h1>
+    <p class="lead">Professional growth. Personal agency. Local control. Honest objections. Human judgment.</p>
+    <div class="byline">
+      <span><strong>Created and moderated by:</strong> Patty Hsu</span>
+      <span><strong>Co-moderator:</strong> Robert Domondon</span>
+    </div>
+  </div>
+  <div class="source"><span>Audience presentation · August 2026</span><span class="slide-no">01</span></div>
+</section>
+
+<section class="slide sky" id="slide-2" data-title="Tonight's question">
+  <div class="frame">
+    <div class="kicker">Tonight’s question</div>
+    <p class="quote">Can a nurse build a personal AI environment that helps them <em>learn, organize, create, and lead</em>—without handing over judgment or privacy?</p>
+  </div>
+  <div class="source"><span>This program addresses personal and professional development—not clinical deployment.</span><span class="slide-no">02</span></div>
+</section>
+
+<section class="slide light" id="slide-3" data-title="Why now">
+  <div class="frame">
+    <div class="kicker">Why now?</div>
+    <div class="split">
+      <div>
+        <div class="big-number">49%</div>
+        <h3>of U.S. adults report using AI chatbots</h3>
+        <p class="sublead">Nearly one in four report daily use. Adoption is moving faster than shared understanding of safe, useful practice.</p>
+      </div>
+      <div class="card">
+        <div class="mini-label">The program’s stance</div>
+        <h3>Adoption is not the same as readiness.</h3>
+        <p>Our goal is not to persuade every nurse to use AI. It is to help nurses understand the choices, boundaries, and responsibilities.</p>
+      </div>
+    </div>
+  </div>
+  <div class="source"><span><a href="https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/" target="_blank" rel="noopener">Pew Research Center, Americans and AI 2026</a></span><span class="slide-no">03</span></div>
+</section>
+
+<section class="slide deep" id="slide-4" data-title="Search behavior">
+  <div class="frame">
+    <div class="kicker">How people are searching now</div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat">3×</div><div class="stat-label">longer average AI Mode query</div></div>
+      <div class="stat-card"><div class="stat">&gt;40%</div><div class="stat-label">monthly growth in follow-up questions</div></div>
+      <div class="stat-card"><div class="stat">80%</div><div class="stat-label">faster growth for planning-related queries</div></div>
+    </div>
+    <p class="sublead" style="margin-top:26px">People are moving from keywords to conversations: <strong>What? How? Can? Is? What should I do next?</strong></p>
+  </div>
+  <div class="source"><span><a href="https://storage.googleapis.com/gweb-uniblog-publish-prod/documents/AI-Mode-US-Insights.pdf" target="_blank" rel="noopener">Google Search, AI Mode U.S. Insights</a></span><span class="slide-no">04</span></div>
+</section>
+
+<section class="slide sky" id="slide-5" data-title="Personal AI system">
+  <div class="frame">
+    <div class="kicker">What is a personal AI system?</div>
+    <div class="flow">
+      <div class="flow-step">The nurse<br><small>purpose + judgment</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Mission Control<br><small>goals + projects</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Thinking partner<br><small>challenge + organize</small></div>
+    </div>
+    <div class="flow" style="grid-template-columns:1fr auto 1fr auto 1fr;margin-top:14px">
+      <div class="flow-step">Approved context<br><small>files + preferences</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Permissioned tools<br><small>visible boundaries</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Human decision<br><small>approve + reject + stop</small></div>
+    </div>
+  </div>
+  <div class="source"><span>The human remains the purpose-setter, reviewer, and accountable decision-maker.</span><span class="slide-no">05</span></div>
+</section>
+
+<section class="slide light" id="slide-6" data-title="Chatbot versus system">
+  <div class="frame">
+    <div class="kicker">A useful distinction</div>
+    <div class="compare">
+      <div class="panel">
+        <div class="icon">💬</div>
+        <h2 style="font-size:44px">Chatbot</h2>
+        <ul class="list">
+          <li>One question at a time</li>
+          <li>Limited continuity</li>
+          <li>Responds to prompts</li>
+          <li>Often centers the model</li>
+        </ul>
+      </div>
+      <div class="arrow">→</div>
+      <div class="panel">
+        <div class="icon">🧭</div>
+        <h2 style="font-size:44px">Personal AI system</h2>
+        <ul class="list">
+          <li>Maintains project continuity</li>
+          <li>Uses approved context</li>
+          <li>Coordinates goals and tools</li>
+          <li>Centers the nurse</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="source"><span>A chatbot gives an answer. A system helps maintain continuity across work and learning.</span><span class="slide-no">06</span></div>
+</section>
+
+<section class="slide sky" id="slide-7" data-title="Professional uses">
+  <div class="frame">
+    <div class="kicker">Professional possibilities</div>
+    <h2>What could it help a nurse do?</h2>
+    <div class="grid grid-3">
+      <div class="card"><div class="icon">🧭</div><h3>Career</h3><p>Map emerging roles, competency gaps, mentors, projects, and next steps.</p></div>
+      <div class="card"><div class="icon">🎓</div><h3>Learning</h3><p>Build study plans, organize CE, create practice questions, and track mastery.</p></div>
+      <div class="card"><div class="icon">🗂️</div><h3>Portfolio</h3><p>Turn projects, presentations, and outcomes into visible proof-of-work.</p></div>
+      <div class="card"><div class="icon">🧩</div><h3>Projects</h3><p>Decompose a non-PHI problem, compare options, and maintain a decision log.</p></div>
+      <div class="card"><div class="icon">🎤</div><h3>Communication</h3><p>Prepare talks, interviews, proposals, agendas, and leadership conversations.</p></div>
+      <div class="card"><div class="icon">🚀</div><h3>Entrepreneurship</h3><p>Clarify customers, test ideas, build evidence, and organize company formation.</p></div>
+    </div>
+  </div>
+  <div class="source"><span>Examples are for personal/professional development using approved non-PHI information.</span><span class="slide-no">07</span></div>
+</section>
+
+<section class="slide light" id="slide-8" data-title="Personal uses">
+  <div class="frame">
+    <div class="kicker">Personal possibilities</div>
+    <h2>Not every use needs to be about work.</h2>
+    <div class="grid grid-2">
+      <div class="card"><h3>Plan</h3><p class="lead" style="font-size:24px">Weekly priorities, household projects, travel research, learning goals, and long-range plans.</p></div>
+      <div class="card"><h3>Create</h3><p class="lead" style="font-size:24px">Writing, reflection, creative work, idea development, and personal knowledge organization.</p></div>
+      <div class="card"><h3>Remember</h3><p class="lead" style="font-size:24px">Project history, decisions, important documents, and deliberately chosen context.</p></div>
+      <div class="card"><h3>Reflect</h3><p class="lead" style="font-size:24px">Tradeoffs, assumptions, alternatives, and questions that still need human judgment.</p></div>
+    </div>
+  </div>
+  <div class="source"><span>AI can help organize options. It should not quietly become the decision-maker.</span><span class="slide-no">08</span></div>
+</section>
+
+<section class="slide teal" id="slide-9" data-title="Thinking partner">
+  <div class="frame">
+    <div class="kicker">Thinking partner, not answer machine</div>
+    <p class="quote">A useful AI should not merely tell you what you want to hear. It should help you see <em>assumptions, alternatives, missing evidence, and uncertainty.</em></p>
+    <div class="pill-row">
+      <span class="pill">Ask what I already think</span>
+      <span class="pill">Challenge the weak assumption</span>
+      <span class="pill">Present the strongest counterargument</span>
+      <span class="pill">Separate fact from inference</span>
+      <span class="pill">Tell me what I must verify</span>
+    </div>
+  </div>
+  <div class="source"><span>Capability should grow without turning into dependency.</span><span class="slide-no">09</span></div>
+</section>
+
+<section class="slide warning" id="slide-10" data-title="Guardrails">
+  <div class="frame">
+    <div class="kicker">Start with the boundary</div>
+    <h2>A personal/community system is not a clinical deployment.</h2>
+    <div class="boundary">
+      <div class="boundary-card good"><strong>Appropriate starting point</strong><p>Career, learning, writing, portfolio, business planning, synthetic examples, and non-PHI projects.</p></div>
+      <div class="boundary-card caution"><strong>Requires institutional governance</strong><p>Employer workflows, internal systems, confidential operational data, staffing, and department automation.</p></div>
+      <div class="boundary-card stop"><strong>Do not place here</strong><p>PHI, patient-specific diagnosis or treatment, medication decisions, unauthorized charting, or clinical actions.</p></div>
+    </div>
+  </div>
+  <div class="source"><span>Personal use, community experimentation, and institutional clinical authority are separate trust domains.</span><span class="slide-no">10</span></div>
+</section>
+
+<section class="slide deep" id="slide-11" data-title="Local cloud hybrid">
+  <div class="frame">
+    <div class="kicker">Where does the intelligence run?</div>
+    <div class="grid grid-3">
+      <div class="card"><div class="icon">☁️</div><h3>Cloud</h3><p>Powerful frontier capability and convenience. Data leaves the device under provider controls.</p></div>
+      <div class="card"><div class="icon">💻</div><h3>Local</h3><p>User-controlled hardware, selected private context, offline potential, and direct maintenance responsibility.</p></div>
+      <div class="card"><div class="icon">🔀</div><h3>Hybrid</h3><p>Routine and sensitive context local; selected difficult tasks routed to approved cloud models.</p></div>
+    </div>
+    <p class="lead" style="margin-top:30px">The important capability is not choosing one forever. It is making the routing <strong>visible, proportional, and reversible.</strong></p>
+  </div>
+  <div class="source"><span>Local-first does not mean local-only.</span><span class="slide-no">11</span></div>
+</section>
+
+<section class="slide sky" id="slide-12" data-title="Benefits of local">
+  <div class="frame">
+    <div class="kicker">Why consider local-first?</div>
+    <h2>More control over the nurse’s private context.</h2>
+    <div class="checklist">
+      <div class="check">Reduce unnecessary data transmission</div>
+      <div class="check">Keep selected memory on the device</div>
+      <div class="check">Continue some work offline</div>
+      <div class="check">Use smaller models for routine tasks</div>
+      <div class="check">Make permissions easier to inspect</div>
+      <div class="check">Revoke tools and access directly</div>
+      <div class="check">Reduce dependence on one provider</div>
+      <div class="check">Choose when frontier capability is justified</div>
+    </div>
+  </div>
+  <div class="source"><span>Local-first can increase control; it does not eliminate governance obligations.</span><span class="slide-no">12</span></div>
+</section>
+
+<section class="slide warning" id="slide-13" data-title="Local limitations">
+  <div class="frame">
+    <div class="kicker">What local does not solve</div>
+    <h2>Local is not a magic privacy shield.</h2>
+    <div class="checklist">
+      <div class="check danger">Device theft or compromise</div>
+      <div class="check danger">Weak passwords or unencrypted storage</div>
+      <div class="check danger">Malicious or vulnerable dependencies</div>
+      <div class="check danger">Undisclosed network calls</div>
+      <div class="check danger">Excessive file permissions</div>
+      <div class="check danger">Poor update and backup practices</div>
+      <div class="check danger">Model hallucination</div>
+      <div class="check danger">Hardware and maintenance burden</div>
+    </div>
+    <p class="lead" style="margin-top:28px"><strong>Local can improve control.</strong> Security still has to be designed and maintained.</p>
+  </div>
+  <div class="source"><span>Ask: What data? What permissions? What network calls? What stop control?</span><span class="slide-no">13</span></div>
+</section>
+
+<section class="slide gold" id="slide-14" data-title="Objection clinic">
+  <div class="frame">
+    <div class="hero-mark">⚖️</div>
+    <div class="kicker">The Objection Clinic</div>
+    <h1>Meet the concerns directly.</h1>
+    <p class="lead">Critical thinking. Privacy. Data centers. Energy. Accuracy. Cost. Agency.</p>
+    <div class="pill-row">
+      <span class="pill">What is the concern?</span>
+      <span class="pill">What does the evidence support?</span>
+      <span class="pill">What should we not claim?</span>
+      <span class="pill">What does responsible practice look like?</span>
+    </div>
+  </div>
+  <div class="source"><span>An objection may reveal a value worth protecting or a design flaw worth fixing.</span><span class="slide-no">14</span></div>
+</section>
+
+<section class="slide light" id="slide-15" data-title="Critical thinking evidence">
+  <div class="frame">
+    <div class="kicker">Objection 1 · Critical thinking</div>
+    <div class="split">
+      <div>
+        <div class="big-number">319</div>
+        <h3>knowledge workers</h3>
+        <div class="big-number" style="font-size:110px;margin-top:28px">936</div>
+        <h3>AI-assisted work examples</h3>
+      </div>
+      <div>
+        <p class="quote" style="font-size:42px">Greater confidence in generative AI was associated with <em>less reported critical thinking.</em></p>
+        <p class="sublead">The study was self-reported and correlational—not proof that AI causes permanent cognitive decline. It does identify an overreliance risk.</p>
+      </div>
+    </div>
+  </div>
+  <div class="source"><span><a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/" target="_blank" rel="noopener">Microsoft Research, The Impact of Generative AI on Critical Thinking</a></span><span class="slide-no">15</span></div>
+</section>
+
+<section class="slide teal" id="slide-16" data-title="Critical thinking loop">
+  <div class="frame">
+    <div class="kicker">The Steward’s Critical-Thinking Loop</div>
+    <div class="loop">
+      <div class="loop-item"><div class="loop-number">1</div><h3>Human position</h3><p>What do I currently think—and why?</p></div>
+      <div class="loop-item"><div class="loop-number">2</div><h3>AI challenge</h3><p>What assumption, alternative, or counterargument am I missing?</p></div>
+      <div class="loop-item"><div class="loop-number">3</div><h3>Evidence inspection</h3><p>Which claims are sourced, current, and applicable?</p></div>
+      <div class="loop-item"><div class="loop-number">4</div><h3>Human judgment</h3><p>What will I decide, and what remains uncertain?</p></div>
+    </div>
+    <p class="lead" style="margin-top:30px">The goal is not frictionless thinking. It is <strong>productive friction where judgment matters.</strong></p>
+  </div>
+  <div class="source"><span>Confidence should remain anchored in the human’s ability to interrogate and override the output.</span><span class="slide-no">16</span></div>
+</section>
+
+<section class="slide deep" id="slide-17" data-title="Privacy concern">
+  <div class="frame">
+    <div class="kicker">Objection 2 · Privacy</div>
+    <div class="split">
+      <div><div class="big-number">71%</div></div>
+      <div>
+        <h2>believe increased AI use will make personal information less secure</h2>
+        <p class="lead">The correct response is not “Trust the provider.” The correct response is: <strong>Show me the data boundary.</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="source"><span><a href="https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/" target="_blank" rel="noopener">Pew Research Center, Americans and AI 2026</a></span><span class="slide-no">17</span></div>
+</section>
+
+<section class="slide sky" id="slide-18" data-title="Data boundary">
+  <div class="frame">
+    <div class="kicker">Show me the data boundary</div>
+    <h2>Seven questions before a personal AI task begins</h2>
+    <div class="checklist" style="margin-top:26px;gap:22px 40px">
+      <div class="check"><span><strong>1. What data?</strong><br><small>Exactly which files, preferences, or context?</small></span></div>
+      <div class="check"><span><strong>2. Where is it stored?</strong><br><small>Local drive, encrypted database, cloud, or several places?</small></span></div>
+      <div class="check"><span><strong>3. What leaves the device?</strong><br><small>Prompts, attachments, telemetry, or outputs?</small></span></div>
+      <div class="check"><span><strong>4. What permissions?</strong><br><small>Which folders, credentials, tools, and destinations?</small></span></div>
+      <div class="check"><span><strong>5. What action can it take?</strong><br><small>Draft only—or send, publish, purchase, or modify?</small></span></div>
+      <div class="check"><span><strong>6. What is the stop path?</strong><br><small>Pause, revoke, remove, or roll back?</small></span></div>
+      <div class="check"><span><strong>7. Who is accountable?</strong><br><small>Which human reviews the result and owns the decision?</small></span></div>
+    </div>
+  </div>
+  <div class="source"><span>Minimum data. Visible permission. Human confirmation. Clear stop path.</span><span class="slide-no">18</span></div>
+</section>
+
+<section class="slide gold" id="slide-19" data-title="Energy evidence">
+  <div class="frame">
+    <div class="kicker">Objection 3 · Energy and data centers</div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat">+17%</div><div class="stat-label">data-center electricity demand in 2025</div></div>
+      <div class="stat-card"><div class="stat">2×</div><div class="stat-label">projected total data-center electricity use by 2030</div></div>
+      <div class="stat-card"><div class="stat">3×</div><div class="stat-label">projected electricity use by AI-focused centers</div></div>
+    </div>
+    <p class="sublead" style="margin-top:28px">Efficiency per task can improve while total consumption still rises because demand grows.</p>
+  </div>
+  <div class="source"><span><a href="https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions" target="_blank" rel="noopener">International Energy Agency, 2026</a></span><span class="slide-no">19</span></div>
+</section>
+
+<section class="slide teal" id="slide-20" data-title="Energy aware orchestration">
+  <div class="frame">
+    <div class="kicker">Energy-aware orchestration</div>
+    <p class="quote">Use the <em>smallest sufficient intelligence</em> for the job.</p>
+    <div class="flow">
+      <div class="flow-step">No AI?<br><small>rule or template</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Retrieval?<br><small>search or lookup</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Small model?<br><small>routine local task</small></div>
+    </div>
+    <div class="flow" style="grid-template-columns:1fr auto 1fr auto 1fr;margin-top:14px">
+      <div class="flow-step">Larger model?<br><small>complex synthesis</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Frontier model?<br><small>only when justified</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Reuse result<br><small>avoid needless regeneration</small></div>
+    </div>
+  </div>
+  <div class="source"><span>Local is not always greener. Model size, hardware, utilization, cooling, and electricity source all matter.</span><span class="slide-no">20</span></div>
+</section>
+
+<section class="slide deep" id="slide-21" data-title="Patty segment">
+  <div class="frame">
+    <div class="hero-mark">🛫</div>
+    <div class="kicker">How I Did This · Patty Hsu</div>
+    <h1>Dashboard → Thinking Partner → Company</h1>
+    <p class="lead">A nurse entrepreneur’s practical path from fragmented ideas to a visible operating system.</p>
+  </div>
+  <div class="source"><span>Patty Hsu · Creator and moderator of In Beautiful Flight</span><span class="slide-no">21</span></div>
+</section>
+
+<section class="slide light" id="slide-22" data-title="Patty introduction stats">
+  <div class="frame">
+    <div class="kicker">Why nurse entrepreneurship matters</div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat">29.8M</div><div class="stat-label">nurses in the global workforce</div><div class="stat-note">A vast reservoir of lived problems, expertise, and trust.</div></div>
+      <div class="stat-card"><div class="stat">18%</div><div class="stat-label">of U.S. firms used AI in at least one business function</div><div class="stat-note">Study period: Nov. 2025–Jan. 2026.</div></div>
+      <div class="stat-card"><div class="stat">52%</div><div class="stat-label">of adopting firms used AI in sales and marketing</div><div class="stat-note">45% reported strategy and business-development use.</div></div>
+    </div>
+    <p class="sublead" style="margin-top:28px">The opportunity is not “AI starts the company.” It is that nurses can use governed AI to externalize and operationalize expertise.</p>
+  </div>
+  <div class="source"><span><a href="https://www.who.int/news/item/12-05-2025-nursing-workforce-grows--but-inequities-threaten-global-health-goals" target="_blank" rel="noopener">WHO nursing workforce</a> · <a href="https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html" target="_blank" rel="noopener">U.S. Census AI diffusion</a></span><span class="slide-no">22</span></div>
+</section>
+
+<section class="slide sky" id="slide-23" data-title="Patty journey">
+  <div class="frame">
+    <div class="kicker">Patty’s journey</div>
+    <div class="flow">
+      <div class="flow-step">Scattered ideas<br><small>notes + priorities</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Visible dashboard<br><small>mission + projects</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Thinking partner<br><small>questions + challenge</small></div>
+    </div>
+    <div class="flow" style="grid-template-columns:1fr auto 1fr auto 1fr;margin-top:14px">
+      <div class="flow-step">Minimum test<br><small>customer + evidence</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Company decision<br><small>human judgment</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Learning loop<br><small>feedback + revision</small></div>
+    </div>
+  </div>
+  <div class="source"><span>The AI helped organize and challenge the work. Patty remained the founder.</span><span class="slide-no">23</span></div>
+</section>
+
+<section class="slide light" id="slide-24" data-title="What Patty will show">
+  <div class="frame">
+    <div class="kicker">How I Did This</div>
+    <h2>What Patty will show</h2>
+    <div class="grid grid-3">
+      <div class="card"><div class="icon">📊</div><h3>The dashboard</h3><p>Mission, active priorities, projects, decisions waiting, metrics, people, evidence, and dormant ideas.</p></div>
+      <div class="card"><div class="icon">🧠</div><h3>The thinking partner</h3><p>Identity, customer, values, working style, source rules, boundaries, challenge behavior, and stop points.</p></div>
+      <div class="card"><div class="icon">🏗️</div><h3>The company</h3><p>Problem understood, person affected, proposed service, minimum test, feedback, revision, and next decision.</p></div>
+    </div>
+    <p class="lead" style="margin-top:30px">Also important: one poor AI answer, one overbuilt feature, one human-only task, and one boundary learned through experience.</p>
+  </div>
+  <div class="source"><span>Success stories become more credible when they include refusals, mistakes, and revisions.</span><span class="slide-no">24</span></div>
+</section>
+
+<section class="slide teal" id="slide-25" data-title="Audience exercise">
+  <div class="frame">
+    <div class="kicker">Your turn</div>
+    <p class="quote">“I want my personal AI system to help me <em>__________________.</em>”</p>
+    <p class="lead" style="margin-top:30px">Choose one useful, non-PHI problem. Keep it small enough to test and clear enough to verify.</p>
+  </div>
+  <div class="source"><span>Start with one problem you understand—not a vague desire to “use AI.”</span><span class="slide-no">25</span></div>
+</section>
+
+<section class="slide sky" id="slide-26" data-title="First governed use case">
+  <div class="frame">
+    <div class="kicker">Design your first governed use case</div>
+    <div class="grid grid-3">
+      <div class="card"><h3>1. Purpose</h3><p>What problem am I trying to solve?</p></div>
+      <div class="card"><h3>2. Inputs</h3><p>What approved, non-PHI information may it use?</p></div>
+      <div class="card"><h3>3. AI role</h3><p>Research, organize, summarize, challenge, draft, or track?</p></div>
+      <div class="card"><h3>4. Prohibitions</h3><p>What must it never access or do?</p></div>
+      <div class="card"><h3>5. Human gate</h3><p>What requires my explicit approval?</p></div>
+      <div class="card"><h3>6. Definition of done</h3><p>How will I verify that the result is useful and accurate enough?</p></div>
+    </div>
+  </div>
+  <div class="source"><span>A good first use case is bounded, reversible, observable, and verifiable.</span><span class="slide-no">26</span></div>
+</section>
+
+<section class="slide deep" id="slide-27" data-title="Starter specification">
+  <div class="frame">
+    <div class="kicker">Starter specification</div>
+    <div class="prompt">Help me with [defined non-PHI task] using only [approved sources or files].
+
+You may [allowed actions]. You may not [prohibited actions].
+
+Before [consequential step], stop and request my approval.
+
+Separate facts, assumptions, and recommendations. Identify uncertainty.
+
+I will verify the result using [criteria or source].</div>
+  </div>
+  <div class="source"><span>Specification is stronger than a vague prompt because it defines authority, boundaries, and verification.</span><span class="slide-no">27</span></div>
+</section>
+
+<section class="slide warning" id="slide-28" data-title="Q&A triage">
+  <div class="frame">
+    <div class="kicker">After the Flight · Q&amp;A triage</div>
+    <h2>Not every use case belongs in the same trust domain.</h2>
+    <div class="boundary">
+      <div class="boundary-card good"><strong>Personal / professional</strong><p>Career, study, writing, portfolio, entrepreneurship, and non-PHI project organization.</p></div>
+      <div class="boundary-card caution"><strong>Institutional</strong><p>Employer workflows, confidential data, department automation, systems access, and formal deployment.</p></div>
+      <div class="boundary-card stop"><strong>Clinical / prohibited here</strong><p>Patient-specific diagnosis, medication, treatment, PHI processing, autonomous charting, or clinical action.</p></div>
+    </div>
+  </div>
+  <div class="source"><span>A personal installation does not confer institutional or clinical authority.</span><span class="slide-no">28</span></div>
+</section>
+
+<section class="slide teal" id="slide-29" data-title="Closing principles">
+  <div class="frame">
+    <div class="kicker">Five principles to take with you</div>
+    <ol class="list" style="counter-reset:item">
+      <li><strong>Capability, not dependency.</strong></li>
+      <li><strong>Local-first does not mean local-only.</strong></li>
+      <li><strong>Show me the data boundary.</strong></li>
+      <li><strong>Use the smallest sufficient intelligence.</strong></li>
+      <li><strong>Agents propose. Humans judge. Nurses steward.</strong></li>
+    </ol>
+  </div>
+  <div class="source"><span>A personal AI system should amplify agency while preserving judgment, privacy, and accountability.</span><span class="slide-no">29</span></div>
+</section>
+
+<section class="slide deep" id="slide-30" data-title="Feedback">
+  <div class="frame">
+    <div class="qr-wrap">
+      <div>
+        <div class="kicker">Help shape the next flight</div>
+        <h1>What should nurses explore next?</h1>
+        <p class="lead">Scan the code to open the planning archive and feedback form.</p>
+        <div class="pill-row">
+          <span class="pill">Rate the program</span>
+          <span class="pill">Name an unresolved objection</span>
+          <span class="pill">Suggest a future guest</span>
+          <span class="pill">Offer a nurse AI story</span>
+        </div>
+        <p class="sublead" style="margin-top:26px"><a href="beautiful-flight.html#feedback">ai-nurse-solutions.github.io/robert-updates/beautiful-flight.html#feedback</a></p>
+      </div>
+      <div class="qr" role="img" aria-label="QR code linking to the In Beautiful Flight feedback form"><svg width="45mm" height="45mm" version="1.1" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg"><path d="M4,4H5V5H4zM5,4H6V5H5zM6,4H7V5H6zM7,4H8V5H7zM8,4H9V5H8zM9,4H10V5H9zM10,4H11V5H10zM12,4H13V5H12zM13,4H14V5H13zM15,4H16V5H15zM16,4H17V5H16zM19,4H20V5H19zM22,4H23V5H22zM29,4H30V5H29zM30,4H31V5H30zM34,4H35V5H34zM35,4H36V5H35zM36,4H37V5H36zM37,4H38V5H37zM38,4H39V5H38zM39,4H40V5H39zM40,4H41V5H40zM4,5H5V6H4zM10,5H11V6H10zM13,5H14V6H13zM17,5H18V6H17zM19,5H20V6H19zM20,5H21V6H20zM21,5H22V6H21zM22,5H23V6H22zM24,5H25V6H24zM25,5H26V6H25zM26,5H27V6H26zM30,5H31V6H30zM32,5H33V6H32zM34,5H35V6H34zM40,5H41V6H40zM4,6H5V7H4zM6,6H7V7H6zM7,6H8V7H7zM8,6H9V7H8zM10,6H11V7H10zM12,6H13V7H12zM13,6H14V7H13zM14,6H15V7H14zM15,6H16V7H15zM16,6H17V7H16zM17,6H18V7H17zM18,6H19V7H18zM19,6H20V7H19zM20,6H21V7H20zM21,6H22V7H21zM22,6H23V7H22zM23,6H24V7H23zM25,6H26V7H25zM26,6H27V7H26zM27,6H28V7H27zM28,6H29V7H28zM29,6H30V7H29zM31,6H32V7H31zM32,6H33V7H32zM34,6H35V7H34zM36,6H37V7H36zM37,6H38V7H37zM38,6H39V7H38zM40,6H41V7H40zM4,7H5V8H4zM6,7H7V8H6zM7,7H8V8H7zM8,7H9V8H8zM10,7H11V8H10zM13,7H14V8H13zM16,7H17V8H16zM21,7H22V8H21zM22,7H23V8H22zM25,7H26V8H25zM26,7H27V8H26zM27,7H28V8H27zM29,7H30V8H29zM31,7H32V8H31zM34,7H35V8H34zM36,7H37V8H36zM37,7H38V8H37zM38,7H39V8H38zM40,7H41V8H40zM4,8H5V9H4zM6,8H7V9H6zM7,8H8V9H7zM8,8H9V9H8zM10,8H11V9H10zM14,8H15V9H14zM15,8H16V9H15zM18,8H19V9H18zM20,8H21V9H20zM21,8H22V9H21zM22,8H23V9H22zM24,8H25V9H24zM25,8H26V9H25zM29,8H30V9H29zM30,8H31V9H30zM34,8H35V9H34zM36,8H37V9H36zM37,8H38V9H37zM38,8H39V9H38zM40,8H41V9H40zM4,9H5V10H4zM10,9H11V10H10zM12,9H13V10H12zM13,9H14V10H13zM15,9H16V10H15zM17,9H18V10H17zM19,9H20V10H19zM22,9H23V10H22zM26,9H27V10H26zM28,9H29V10H28zM29,9H30V10H29zM30,9H31V10H30zM32,9H33V10H32zM34,9H35V10H34zM40,9H41V10H40zM4,10H5V11H4zM5,10H6V11H5zM6,10H7V11H6zM7,10H8V11H7zM8,10H9V11H8zM9,10H10V11H9zM10,10H11V11H10zM12,10H13V11H12zM14,10H15V11H14zM16,10H17V11H16zM18,10H19V11H18zM20,10H21V11H20zM22,10H23V11H22zM24,10H25V11H24zM26,10H27V11H26zM28,10H29V11H28zM30,10H31V11H30zM32,10H33V11H32zM34,10H35V11H34zM35,10H36V11H35zM36,10H37V11H36zM37,10H38V11H37zM38,10H39V11H38zM39,10H40V11H39zM40,10H41V11H40zM13,11H14V12H13zM15,11H16V12H15zM17,11H18V12H17zM18,11H19V12H18zM19,11H20V12H19zM22,11H23V12H22zM23,11H24V12H23zM27,11H28V12H27zM28,11H29V12H28zM31,11H32V12H31zM4,12H5V13H4zM6,12H7V13H6zM10,12H11V13H10zM11,12H12V13H11zM14,12H15V13H14zM15,12H16V13H15zM16,12H17V13H16zM17,12H18V13H17zM18,12H19V13H18zM23,12H24V13H23zM24,12H25V13H24zM26,12H27V13H26zM28,12H29V13H28zM31,12H32V13H31zM32,12H33V13H32zM35,12H36V13H35zM38,12H39V13H38zM40,12H41V13H40zM4,13H5V14H4zM5,13H6V14H5zM7,13H8V14H7zM8,13H9V14H8zM11,13H12V14H11zM17,13H18V14H17zM21,13H22V14H21zM23,13H24V14H23zM24,13H25V14H24zM27,13H28V14H27zM28,13H29V14H28zM29,13H30V14H29zM30,13H31V14H30zM31,13H32V14H31zM32,13H33V14H32zM34,13H35V14H34zM37,13H38V14H37zM39,13H40V14H39zM40,13H41V14H40zM5,14H6V15H5zM6,14H7V15H6zM8,14H9V15H8zM9,14H10V15H9zM10,14H11V15H10zM13,14H14V15H13zM14,14H15V15H14zM15,14H16V15H15zM17,14H18V15H17zM18,14H19V15H18zM19,14H20V15H19zM21,14H22V15H21zM22,14H23V15H22zM23,14H24V15H23zM24,14H25V15H24zM26,14H27V15H26zM27,14H28V15H27zM29,14H30V15H29zM31,14H32V15H31zM32,14H33V15H32zM33,14H34V15H33zM34,14H35V15H34zM38,14H39V15H38zM40,14H41V15H40zM4,15H5V16H4zM7,15H8V16H7zM11,15H12V16H11zM12,15H13V16H12zM14,15H15V16H14zM15,15H16V16H15zM16,15H17V16H16zM22,15H23V16H22zM23,15H24V16H23zM24,15H25V16H24zM26,15H27V16H26zM27,15H28V16H27zM28,15H29V16H28zM30,15H31V16H30zM32,15H33V16H32zM33,15H34V16H33zM37,15H38V16H37zM4,16H5V17H4zM5,16H6V17H5zM6,16H7V17H6zM7,16H8V17H7zM8,16H9V17H8zM10,16H11V17H10zM11,16H12V17H11zM13,16H14V17H13zM17,16H18V17H17zM18,16H19V17H18zM19,16H20V17H19zM23,16H24V17H23zM24,16H25V17H24zM26,16H27V17H26zM27,16H28V17H27zM28,16H29V17H28zM31,16H32V17H31zM34,16H35V17H34zM35,16H36V17H35zM40,16H41V17H40zM5,17H6V18H5zM11,17H12V18H11zM16,17H17V18H16zM17,17H18V18H17zM19,17H20V18H19zM20,17H21V18H20zM23,17H24V18H23zM24,17H25V18H24zM25,17H26V18H25zM27,17H28V18H27zM28,17H29V18H28zM30,17H31V18H30zM31,17H32V18H31zM32,17H33V18H32zM34,17H35V18H34zM35,17H36V18H35zM37,17H38V18H37zM39,17H40V18H39zM40,17H41V18H40zM4,18H5V19H4zM6,18H7V19H6zM9,18H10V19H9zM10,18H11V19H10zM11,18H12V19H11zM13,18H14V19H13zM14,18H15V19H14zM16,18H17V19H16zM18,18H19V19H18zM19,18H20V19H19zM21,18H22V19H21zM23,18H24V19H23zM27,18H28V19H27zM29,18H30V19H29zM31,18H32V19H31zM32,18H33V19H32zM37,18H38V19H37zM38,18H39V19H38zM40,18H41V19H40zM5,19H6V20H5zM7,19H8V20H7zM9,19H10V20H9zM11,19H12V20H11zM13,19H14V20H13zM15,19H16V20H15zM18,19H19V20H18zM20,19H21V20H20zM24,19H25V20H24zM30,19H31V20H30zM31,19H32V20H31zM33,19H34V20H33zM34,19H35V20H34zM35,19H36V20H35zM36,19H37V20H36zM37,19H38V20H37zM39,19H40V20H39zM4,20H5V21H4zM6,20H7V21H6zM10,20H11V21H10zM12,20H13V21H12zM13,20H14V21H13zM15,20H16V21H15zM16,20H17V21H16zM19,20H20V21H19zM20,20H21V21H20zM23,20H24V21H23zM24,20H25V21H24zM28,20H29V21H28zM31,20H32V21H31zM34,20H35V21H34zM4,21H5V22H4zM11,21H12V22H11zM13,21H14V22H13zM15,21H16V22H15zM18,21H19V22H18zM20,21H21V22H20zM21,21H22V22H21zM23,21H24V22H23zM24,21H25V22H24zM25,21H26V22H25zM27,21H28V22H27zM28,21H29V22H28zM31,21H32V22H31zM32,21H33V22H32zM34,21H35V22H34zM35,21H36V22H35zM39,21H40V22H39zM40,21H41V22H40zM5,22H6V23H5zM6,22H7V23H6zM7,22H8V23H7zM10,22H11V23H10zM13,22H14V23H13zM15,22H16V23H15zM16,22H17V23H16zM17,22H18V23H17zM20,22H21V23H20zM23,22H24V23H23zM27,22H28V23H27zM30,22H31V23H30zM31,22H32V23H31zM33,22H34V23H33zM36,22H37V23H36zM37,22H38V23H37zM38,22H39V23H38zM40,22H41V23H40zM4,23H5V24H4zM5,23H6V24H5zM6,23H7V24H6zM7,23H8V24H7zM9,23H10V24H9zM11,23H12V24H11zM12,23H13V24H12zM14,23H15V24H14zM15,23H16V24H15zM17,23H18V24H17zM18,23H19V24H18zM19,23H20V24H19zM20,23H21V24H20zM22,23H23V24H22zM23,23H24V24H23zM30,23H31V24H30zM32,23H33V24H32zM33,23H34V24H33zM35,23H36V24H35zM37,23H38V24H37zM4,24H5V25H4zM5,24H6V25H5zM7,24H8V25H7zM8,24H9V25H8zM9,24H10V25H9zM10,24H11V25H10zM12,24H13V25H12zM15,24H16V25H15zM16,24H17V25H16zM17,24H18V25H17zM18,24H19V25H18zM20,24H21V25H20zM22,24H23V25H22zM23,24H24V25H23zM28,24H29V25H28zM31,24H32V25H31zM33,24H34V25H33zM34,24H35V25H34zM35,24H36V25H35zM37,24H38V25H37zM39,24H40V25H39zM4,25H5V26H4zM5,25H6V26H5zM8,25H9V26H8zM9,25H10V26H9zM12,25H13V26H12zM13,25H14V26H13zM14,25H15V26H14zM15,25H16V26H15zM19,25H20V26H19zM20,25H21V26H20zM23,25H24V26H23zM24,25H25V26H24zM25,25H26V26H25zM27,25H28V26H27zM28,25H29V26H28zM29,25H30V26H29zM31,25H32V26H31zM32,25H33V26H32zM34,25H35V26H34zM40,25H41V26H40zM4,26H5V27H4zM5,26H6V27H5zM6,26H7V27H6zM7,26H8V27H7zM8,26H9V27H8zM10,26H11V27H10zM11,26H12V27H11zM12,26H13V27H12zM13,26H14V27H13zM19,26H20V27H19zM20,26H21V27H20zM22,26H23V27H22zM23,26H24V27H23zM24,26H25V27H24zM25,26H26V27H25zM26,26H27V27H26zM27,26H28V27H27zM28,26H29V27H28zM29,26H30V27H29zM31,26H32V27H31zM33,26H34V27H33zM34,26H35V27H34zM37,26H38V27H37zM38,26H39V27H38zM39,26H40V27H39zM40,26H41V27H40zM11,27H12V28H11zM13,27H14V28H13zM14,27H15V28H14zM16,27H17V28H16zM18,27H19V28H18zM19,27H20V28H19zM28,27H29V28H28zM32,27H33V28H32zM34,27H35V28H34zM35,27H36V28H35zM36,27H37V28H36zM37,27H38V28H37zM4,28H5V29H4zM5,28H6V29H5zM7,28H8V29H7zM10,28H11V29H10zM13,28H14V29H13zM14,28H15V29H14zM17,28H18V29H17zM18,28H19V29H18zM19,28H20V29H19zM20,28H21V29H20zM24,28H25V29H24zM27,28H28V29H27zM28,28H29V29H28zM30,28H31V29H30zM31,28H32V29H31zM34,28H35V29H34zM35,28H36V29H35zM40,28H41V29H40zM6,29H7V30H6zM9,29H10V30H9zM11,29H12V30H11zM12,29H13V30H12zM14,29H15V30H14zM17,29H18V30H17zM21,29H22V30H21zM23,29H24V30H23zM26,29H27V30H26zM27,29H28V30H27zM28,29H29V30H28zM29,29H30V30H29zM31,29H32V30H31zM32,29H33V30H32zM34,29H35V30H34zM35,29H36V30H35zM37,29H38V30H37zM40,29H41V30H40zM4,30H5V31H4zM5,30H6V31H5zM7,30H8V31H7zM9,30H10V31H9zM10,30H11V31H10zM12,30H13V31H12zM15,30H16V31H15zM17,30H18V31H17zM19,30H20V31H19zM23,30H24V31H23zM24,30H25V31H24zM27,30H28V31H27zM28,30H29V31H28zM31,30H32V31H31zM35,30H36V31H35zM36,30H37V31H36zM37,30H38V31H37zM38,30H39V31H38zM40,30H41V31H40zM6,31H7V32H6zM8,31H9V32H8zM12,31H13V32H12zM15,31H16V32H15zM18,31H19V32H18zM19,31H20V32H19zM22,31H23V32H22zM24,31H25V32H24zM26,31H27V32H26zM28,31H29V32H28zM30,31H31V32H30zM33,31H34V32H33zM35,31H36V32H35zM37,31H38V32H37zM40,31H41V32H40zM4,32H5V33H4zM5,32H6V33H5zM8,32H9V33H8zM9,32H10V33H9zM10,32H11V33H10zM11,32H12V33H11zM12,32H13V33H12zM14,32H15V33H14zM15,32H16V33H15zM17,32H18V33H17zM18,32H19V33H18zM20,32H21V33H20zM24,32H25V33H24zM31,32H32V33H31zM32,32H33V33H32zM33,32H34V33H33zM34,32H35V33H34zM35,32H36V33H35zM36,32H37V33H36zM37,32H38V33H37zM39,32H40V33H39zM40,32H41V33H40zM12,33H13V34H12zM13,33H14V34H13zM14,33H15V34H14zM15,33H16V34H15zM16,33H17V34H16zM19,33H20V34H19zM20,33H21V34H20zM22,33H23V34H22zM23,33H24V34H23zM24,33H25V34H24zM27,33H28V34H27zM28,33H29V34H28zM29,33H30V34H29zM31,33H32V34H31zM32,33H33V34H32zM36,33H37V34H36zM39,33H40V34H39zM40,33H41V34H40zM4,34H5V35H4zM5,34H6V35H5zM6,34H7V35H6zM7,34H8V35H7zM8,34H9V35H8zM9,34H10V35H9zM10,34H11V35H10zM12,34H13V35H12zM14,34H15V35H14zM15,34H16V35H15zM16,34H17V35H16zM17,34H18V35H17zM19,34H20V35H19zM21,34H22V35H21zM22,34H23V35H22zM23,34H24V35H23zM24,34H25V35H24zM25,34H26V35H25zM27,34H28V35H27zM29,34H30V35H29zM32,34H33V35H32zM34,34H35V35H34zM36,34H37V35H36zM40,34H41V35H40zM4,35H5V36H4zM10,35H11V36H10zM14,35H15V36H14zM16,35H17V36H16zM17,35H18V36H17zM19,35H20V36H19zM20,35H21V36H20zM22,35H23V36H22zM24,35H25V36H24zM28,35H29V36H28zM30,35H31V36H30zM31,35H32V36H31zM32,35H33V36H32zM36,35H37V36H36zM40,35H41V36H40zM4,36H5V37H4zM6,36H7V37H6zM7,36H8V37H7zM8,36H9V37H8zM10,36H11V37H10zM15,36H16V37H15zM16,36H17V37H16zM17,36H18V37H17zM18,36H19V37H18zM20,36H21V37H20zM23,36H24V37H23zM24,36H25V37H24zM27,36H28V37H27zM28,36H29V37H28zM31,36H32V37H31zM32,36H33V37H32zM33,36H34V37H33zM34,36H35V37H34zM35,36H36V37H35zM36,36H37V37H36zM39,36H40V37H39zM40,36H41V37H40zM4,37H5V38H4zM6,37H7V38H6zM7,37H8V38H7zM8,37H9V38H8zM10,37H11V38H10zM16,37H17V38H16zM17,37H18V38H17zM19,37H20V38H19zM20,37H21V38H20zM23,37H24V38H23zM24,37H25V38H24zM25,37H26V38H25zM27,37H28V38H27zM28,37H29V38H28zM29,37H30V38H29zM32,37H33V38H32zM33,37H34V38H33zM36,37H37V38H36zM39,37H40V38H39zM4,38H5V39H4zM6,38H7V39H6zM7,38H8V39H7zM8,38H9V39H8zM10,38H11V39H10zM12,38H13V39H12zM13,38H14V39H13zM17,38H18V39H17zM18,38H19V39H18zM19,38H20V39H19zM22,38H23V39H22zM23,38H24V39H23zM25,38H26V39H25zM26,38H27V39H26zM27,38H28V39H27zM28,38H29V39H28zM29,38H30V39H29zM33,38H34V39H33zM35,38H36V39H35zM36,38H37V39H36zM38,38H39V39H38zM40,38H41V39H40zM4,39H5V40H4zM10,39H11V40H10zM14,39H15V40H14zM15,39H16V40H15zM19,39H20V40H19zM24,39H25V40H24zM26,39H27V40H26zM27,39H28V40H27zM28,39H29V40H28zM32,39H33V40H32zM33,39H34V40H33zM36,39H37V40H36zM37,39H38V40H37zM4,40H5V41H4zM5,40H6V41H5zM6,40H7V41H6zM7,40H8V41H7zM8,40H9V41H8zM9,40H10V41H9zM10,40H11V41H10zM12,40H13V41H12zM13,40H14V41H13zM19,40H20V41H19zM20,40H21V41H20zM27,40H28V41H27zM32,40H33V41H32zM34,40H35V41H34zM35,40H36V41H35zM40,40H41V41H40z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none"/></svg></div>
+    </div>
+  </div>
+  <div class="source"><span>In Beautiful Flight · Created and moderated by Patty Hsu · Robert Domondon, co-moderator</span><span class="slide-no">30</span></div>
+</section>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const counter=document.getElementById('counter');
+  const progress=document.getElementById('progress');
+  const menu=document.getElementById('menu');
+  const menuGrid=document.getElementById('menuGrid');
+  let current=0;
+
+  slides.forEach((slide,index)=>{
+    const link=document.createElement('a');
+    link.href='#'+slide.id;
+    link.textContent=String(index+1).padStart(2,'0')+' · '+slide.dataset.title;
+    link.addEventListener('click',()=>{menu.classList.remove('open');menu.setAttribute('aria-hidden','true')});
+    menuGrid.appendChild(link);
+  });
+
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        current=slides.indexOf(entry.target);
+        updateUI();
+      }
+    });
+  },{threshold:.58});
+  slides.forEach(s=>observer.observe(s));
+
+  function updateUI(){
+    counter.textContent=(current+1)+' / '+slides.length;
+    progress.style.width=((current+1)/slides.length*100)+'%';
+    history.replaceState(null,'','#'+slides[current].id);
+  }
+  function goTo(index){
+    current=Math.max(0,Math.min(slides.length-1,index));
+    slides[current].scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function nextSlide(){goTo(current+1)}
+  function previousSlide(){goTo(current-1)}
+  function toggleMenu(){
+    const open=menu.classList.toggle('open');
+    menu.setAttribute('aria-hidden',String(!open));
+  }
+  function toggleFullscreen(){
+    if(!document.fullscreenElement){document.documentElement.requestFullscreen?.()}
+    else{document.exitFullscreen?.()}
+  }
+  document.addEventListener('keydown',e=>{
+    if(menu.classList.contains('open')){
+      if(e.key==='Escape')toggleMenu();
+      return;
+    }
+    if(['ArrowDown','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();nextSlide()}
+    if(['ArrowUp','PageUp','Backspace'].includes(e.key)){e.preventDefault();previousSlide()}
+    if(e.key==='Home'){e.preventDefault();goTo(0)}
+    if(e.key==='End'){e.preventDefault();goTo(slides.length-1)}
+    if(e.key.toLowerCase()==='f'){toggleFullscreen()}
+    if(e.key.toLowerCase()==='m'){toggleMenu()}
+  });
+  window.addEventListener('load',()=>{
+    const match=location.hash.match(/slide-(\d+)/);
+    if(match){current=Math.max(0,Math.min(slides.length-1,Number(match[1])-1))}
+    updateUI();
+  });
+</script>
+</body>
+</html>
