@@ -1,6 +1,16 @@
-window.SEED_GARDEN_UPDATED = "August 15, 2026 — 30-Day Direction";
+window.SEED_GARDEN_UPDATED = "August 19, 2026 — Care Workforce Surge";
 
 window.SEED_GARDEN = [
+  {
+    id: "care-workforce-surge-doctrine",
+    title: "Care Workforce Surge: supervision is the scarce resource",
+    summary: "The projection was that an influx of workers moves into caregiving and that a Nurse AI OS becomes critical infrastructure to upskill and coordinate them. Checked against BLS, PHI, NCSBN, AACN, WHO, and peer-reviewed evidence, the flow holds but its shape does not: 9.7M projected direct-care openings meet ~75% home-care turnover and a nursing workforce 39.9% of whom intend to leave within five years. What arrives is churn, not tenure — so the binding constraint is not labor supply but supervisory capacity per experienced nurse. Novice-first survives; answer-first does not: models scoring 94.9% alone delivered under 34.5% through untrained users, no better than no assistance at all.",
+    status: "growing", priority: "Critical", horizon: "Next 30 days", workstream: "Nurse AI OS / Care Workforce Surge",
+    tags: ["Doctrine", "Validated projection", "Supervision multiplier", "Novice co-pilot", "Non-PHI", "Falsifiers"],
+    next: "Run Phase 0 before building anything: metric definitions, the adversarial refusal-test bundle, consent language, and the synthetic scenario corpus. The gate is that every refusal class has a test that fails against a deliberately weakened prompt.",
+    link: "https://nurse-ai-os.org/care-workforce-surge/",
+    linkLabel: "Read the doctrine, strategy, plan, and playbook"
+  },
   {
     id: "30-day-edge-agent-north-star",
     title: "30-Day North Star: prove the Nurse AI OS Edge-Agent Hybrid",
