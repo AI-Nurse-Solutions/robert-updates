@@ -1,0 +1,395 @@
+{
+  "schema_version": 1,
+  "sprint_id": "NAIO-SPEED-2026-09",
+  "name": "Speed Sprint",
+  "revision": 1,
+  "updated_at": "2026-09-09T20:17:36-07:00",
+  "timezone": "America/Los_Angeles",
+  "window_start": "2026-09-10",
+  "window_end": "2026-09-16",
+  "window_note": "Seven target build days after setup on September 9. Work advances on request, not automatically with the calendar.",
+  "project": "Nurse AI OS",
+  "goal": "One inspectable public-source learning mission across all four pillars, with a Hermes-first portable core and explicit local/cloud boundaries.",
+  "source_of_truth": {
+    "repository": "AI-Nurse-Solutions/robert-updates",
+    "branch": "review/speed-sprint-2026-09-09",
+    "path": "assets/speed-sprint.json",
+    "runbook": "SPEED_SPRINT.md",
+    "board": "kanban.html#speed-sprint",
+    "mode": "Versioned project metadata; local browser notes are never authority."
+  },
+  "triggers": [
+    "I feel the need for speed",
+    "do next Sprint"
+  ],
+  "work_policy": {
+    "wip_limit": 1,
+    "max_scope": "One smallest coherent eligible step per user invocation.",
+    "execution": "Explicit user request only; no background scheduler.",
+    "blocked": "Record the hold and select only an independent eligible step. Never bypass a held tool operation.",
+    "authorizations": "No automatic merge, release, policy change, credentials, provider spending, private-data transmission or clinical activity."
+  },
+  "baseline": {
+    "observed_at": "2026-09-09T20:17:36-07:00",
+    "code_repository": "AI-Nurse-Solutions/florence-x",
+    "code_revision": "369bac4171cdd001dd9b20e16b18cb9b9e33d0bd",
+    "catalog_pr": 17,
+    "harness_pr": 15,
+    "reported_tests": 299,
+    "reported_http_checks": 16,
+    "reported_lint_findings": 20,
+    "evidence_note": "Prior CI evidence recorded in the current PR; tests were not rerun by the planning dashboard.",
+    "url": "https://github.com/AI-Nurse-Solutions/florence-x/pull/17"
+  },
+  "pillars": [
+    {
+      "name": "Knowledge",
+      "state": "Evidence record foundations tested",
+      "gap": "Managed evidence workspace and learner understanding unproven."
+    },
+    {
+      "name": "Judgment",
+      "state": "Review safeguards tested in synthetic scope",
+      "gap": "Learner-first thinking workbench not built."
+    },
+    {
+      "name": "Capability",
+      "state": "Selected workflow controls tested",
+      "gap": "Real governed Hermes mission and operational portfolio save unverified."
+    },
+    {
+      "name": "Contribution",
+      "state": "Read-only catalog contract tested",
+      "gap": "Professional review, private portfolio and reuse outcomes pending."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "SS-00",
+      "day": 0,
+      "date": "2026-09-09",
+      "title": "Speed Sprint control board",
+      "primary_pillar": "Contribution",
+      "pillar_dependencies": [
+        "Knowledge",
+        "Judgment",
+        "Capability"
+      ],
+      "status": "done",
+      "maturity": "tested",
+      "human_need": "A repeatable next step, visible progress and explicit holds instead of plans lost in chat.",
+      "deliverable": "Seven-day plan, trigger runbook, updated existing Seed Garden Kanban and local launcher.",
+      "acceptance": [
+        "Preserve every existing seed and original growth categories.",
+        "Persist the plan and authoritative status in the existing repository on a review branch.",
+        "Test task selection, dependency validation, browser interactions and loopback-only serving.",
+        "Do not represent a local dashboard as installed on the user’s device or as a released clinical product."
+      ],
+      "depends_on": [],
+      "gate_dependencies": [],
+      "conditional_gates": [],
+      "scope": "Project planning metadata only.",
+      "weakens": "A dashboard can reward task count instead of useful outcomes; maturity and release remain separate.",
+      "next_action": "Read the current source baseline and begin SS-01 on the next explicit sprint request.",
+      "owner": "Development agent; Robert product review",
+      "review_status": "not_reviewed",
+      "evidence": [
+        "Local planning/HTTP tests: 36 passed.",
+        "JavaScript ledger and preservation checks: 13 passed.",
+        "Chromium offline-view checks: 12 passed; browser-to-localhost blocked by environment policy.",
+        "Existing kanban and seeds reconstructed with matching Git blob hashes before additive changes."
+      ]
+    },
+    {
+      "id": "SS-01",
+      "day": 1,
+      "date": "2026-09-10",
+      "title": "Make the mission portable",
+      "primary_pillar": "Capability",
+      "pillar_dependencies": [
+        "Knowledge",
+        "Judgment",
+        "Contribution"
+      ],
+      "status": "ready",
+      "maturity": "described",
+      "human_need": "A nurse should keep the same learning goal and professional records when the interface, model, or hosting arrangement changes.",
+      "deliverable": "One thin, responsive learning-workspace shell plus versioned mission records and local / hybrid / hosted-test deployment manifests.",
+      "acceptance": [
+        "A public/synthetic learning goal opens on desktop and narrow mobile viewports.",
+        "Records use stable IDs independent of Hermes sessions and model-provider conversations.",
+        "Three manifests distinguish interaction, harness, authoritative storage and inference locations.",
+        "Unknown deployment, source classification or endpoint fails validation; no network inference runs.",
+        "Existing schemas and held files remain unchanged; regression evidence accompanies a draft change."
+      ],
+      "depends_on": [],
+      "gate_dependencies": [],
+      "conditional_gates": [],
+      "scope": "Local prototype, synthetic fixtures, no account setup or provider spend.",
+      "weakens": "Architecture overhead can delay nurse value; the deliverable must include a visible mission, not only diagrams.",
+      "next_action": "Read the current catalog code and source baseline; specify the minimal MissionRecord and three deployment manifests before coding.",
+      "owner": "Development agent; Robert reviews product value",
+      "review_status": "not_reviewed",
+      "evidence": []
+    },
+    {
+      "id": "SS-02",
+      "day": 2,
+      "date": "2026-09-11",
+      "title": "Make evidence inspectable",
+      "primary_pillar": "Knowledge",
+      "pillar_dependencies": [
+        "Judgment",
+        "Capability",
+        "Contribution"
+      ],
+      "status": "planned",
+      "maturity": "described",
+      "human_need": "A nurse needs to examine what a resource actually says, what it applies to, and what it does not establish.",
+      "deliverable": "A small versioned public-source learning pack, passage-level evidence cards and a focused glossary within the mission workspace.",
+      "acceptance": [
+        "Use 3–5 inspected primary-source passages with revision, passage locator and rights/reuse notes.",
+        "Evidence, generated synthesis, inference and missing information display as different states.",
+        "Broken references, changed passages and unsupported claims remain visible rather than becoming sourced badges.",
+        "Corpus selection is checked before retrieval; unknown/nonpublic inputs are refused in this prototype.",
+        "A nurse can point to a passage and explain one limitation; human check remains pending until actually observed."
+      ],
+      "depends_on": [
+        "SS-01"
+      ],
+      "gate_dependencies": [],
+      "conditional_gates": [],
+      "scope": "Public-source corpus only. No patient stories, employer files or private memory.",
+      "weakens": "Citation labels may be mistaken for truth; hash matching proves integrity, not semantic support.",
+      "next_action": "Create a tiny fixed corpus and claim-to-passage test cases; build evidence cards before expanding search.",
+      "owner": "Development agent; Robert reviews product value",
+      "review_status": "not_reviewed",
+      "evidence": []
+    },
+    {
+      "id": "SS-03",
+      "day": 3,
+      "date": "2026-09-12",
+      "title": "Protect the nurse’s thinking",
+      "primary_pillar": "Judgment",
+      "pillar_dependencies": [
+        "Knowledge",
+        "Capability",
+        "Contribution"
+      ],
+      "status": "planned",
+      "maturity": "described",
+      "human_need": "The nurse must form an interpretation and be able to disagree, revise or withhold a decision before producing a resource.",
+      "deliverable": "A commit-then-compare workbench with initial interpretation, alternatives, evidence gaps, consequences and a recorded human choice.",
+      "acceptance": [
+        "Learning flow records initial interpretation or explicit uncertainty before revealing a labeled proposal.",
+        "No preselected AI verdict; accept, revise, reject and withhold are genuine alternatives.",
+        "Changing the evidence or proposal preserves prior decisions and requires a new comparison record.",
+        "A planted omission, conflicting evidence and persuasive unsupported suggestion appear in regression cases.",
+        "Keyboard navigation and narrow-screen use are checked; no competence score or hidden reasoning is inferred."
+      ],
+      "depends_on": [
+        "SS-02"
+      ],
+      "gate_dependencies": [],
+      "conditional_gates": [],
+      "scope": "Synthetic comparison first; no consequential execution.",
+      "weakens": "Excessive forms can exhaust users; a reflection record is not proof of independent judgment.",
+      "next_action": "Implement the decision state transitions and learner-first view; evaluate reject/withhold paths as first-class outcomes.",
+      "owner": "Development agent; Robert reviews product value",
+      "review_status": "not_reviewed",
+      "evidence": []
+    },
+    {
+      "id": "SS-04",
+      "day": 4,
+      "date": "2026-09-13",
+      "title": "Connect Hermes without lock-in",
+      "primary_pillar": "Capability",
+      "pillar_dependencies": [
+        "Knowledge",
+        "Judgment",
+        "Contribution"
+      ],
+      "status": "planned",
+      "maturity": "described",
+      "human_need": "A nurse can use the preferred desktop environment without surrendering professional records or granting its agent unrestricted authority.",
+      "deliverable": "A pinned Hermes interface assessment and a narrow runtime bridge for the same learning mission.",
+      "acceptance": [
+        "Record exact upstream repository, commit, interfaces and separate code/model/data rights.",
+        "Use a configuration/adapter or companion workbench before considering a fork.",
+        "Hermes receives only admitted context for one bounded stage; core records remain in Nurse AI OS.",
+        "Missing hooks, broad tools, unverified cancellation or bypass paths block runtime activation.",
+        "When Hermes is unavailable, the mission still opens and manual learning continues; a fixture is not reported as a live integration."
+      ],
+      "depends_on": [
+        "SS-03"
+      ],
+      "gate_dependencies": [],
+      "conditional_gates": [
+        "G-02"
+      ],
+      "scope": "Isolated read-only or proposal-only integration; no unrestricted terminal, scheduled jobs or credentials.",
+      "weakens": "A profile or prompt may be mistaken for containment; bridge tests must distinguish advisory and enforced controls.",
+      "next_action": "Assess the exact runtime interface against the adapter contract; implement only the smallest supported route.",
+      "owner": "Development agent; Robert reviews product value",
+      "review_status": "not_reviewed",
+      "evidence": []
+    },
+    {
+      "id": "SS-05",
+      "day": 5,
+      "date": "2026-09-14",
+      "title": "Prove model substitution",
+      "primary_pillar": "Capability",
+      "pillar_dependencies": [
+        "Knowledge",
+        "Judgment",
+        "Contribution"
+      ],
+      "status": "planned",
+      "maturity": "described",
+      "human_need": "The nurse should not lose their work, source context or ability to challenge the output when the model changes.",
+      "deliverable": "Typed inference requests/results, capability-aware routing and a reproducible local-versus-cloud adapter comparison harness.",
+      "acceptance": [
+        "Permission and allowed destinations filter models before suitability, latency and cost.",
+        "Unsupported tool/structured-output features, timeouts and refusals produce explicit outcomes.",
+        "No local failure silently uploads context to cloud; private reflection stays excluded.",
+        "Compare identical public/synthetic tasks, source pack and budget across two adapters; label recorded/stub results honestly.",
+        "Live local/remote comparison runs only with available approved endpoints and an explicit spend ceiling; otherwise report it pending."
+      ],
+      "depends_on": [
+        "SS-03"
+      ],
+      "gate_dependencies": [],
+      "conditional_gates": [
+        "G-02",
+        "G-03"
+      ],
+      "scope": "No new paid APIs or transmission of personal data; live provider calls conditional.",
+      "weakens": "API compatibility may be mistaken for equivalent capability; comparison must include omissions and human review cost.",
+      "next_action": "Extend the existing model-router contract; test routing denials and no-silent-fallback before invoking real models.",
+      "owner": "Development agent; Robert reviews product value",
+      "review_status": "not_reviewed",
+      "evidence": []
+    },
+    {
+      "id": "SS-06",
+      "day": 6,
+      "date": "2026-09-15",
+      "title": "Prepare a truthful portfolio save",
+      "primary_pillar": "Contribution",
+      "pillar_dependencies": [
+        "Knowledge",
+        "Judgment",
+        "Capability"
+      ],
+      "status": "planned",
+      "maturity": "described",
+      "human_need": "A nurse needs a portable, attributable resource and a reliable answer to whether it was actually saved.",
+      "deliverable": "Versioned portfolio record and acceptance/failure suite; a real private save only after all prerequisite gates are satisfied.",
+      "acceptance": [
+        "Bind owner, destination, content hash, source versions, decision, AI disclosure and review status.",
+        "No successful save receipt unless read-back confirms the expected persisted artifact.",
+        "Duplicate, interrupted, stale-approval, revoked, unavailable-audit and unknown-outcome cases are specified and tested as permitted.",
+        "Private record and public contribution remain separate; nothing is submitted or published automatically.",
+        "If clean CI or identity/authorization is unresolved, deliver contract and test fixtures only; actual save remains blocked, not marked complete."
+      ],
+      "depends_on": [
+        "SS-03"
+      ],
+      "gate_dependencies": [],
+      "conditional_gates": [
+        "G-01",
+        "G-02"
+      ],
+      "scope": "Contract/test preparation is independent. Operational portfolio writes require G-01 and G-02.",
+      "weakens": "A polished artifact can be mistaken for competence; a simulated receipt can be mistaken for persistence.",
+      "next_action": "Specify the ActionIntent-to-ExecutionReceipt mapping and failure cases without enabling a write path prematurely.",
+      "owner": "Development agent; Robert reviews product value",
+      "review_status": "not_reviewed",
+      "evidence": []
+    },
+    {
+      "id": "SS-07",
+      "day": 7,
+      "date": "2026-09-16",
+      "title": "Show the whole mission; decide the next bet",
+      "primary_pillar": "Judgment",
+      "pillar_dependencies": [
+        "Knowledge",
+        "Capability",
+        "Contribution"
+      ],
+      "status": "planned",
+      "maturity": "described",
+      "human_need": "The product should demonstrate useful, understandable work for a nurse, including those who only have a phone or tablet.",
+      "deliverable": "An integrated demonstration, hosted-readiness assessment, formative evaluation kit and evidence-based next-sprint recommendation.",
+      "acceptance": [
+        "Run the implemented learning stages end to end; show any blocked save as blocked, not as a completed mission.",
+        "Demonstrate the same portable records in local and narrow-screen hosted-test configurations; no public cloud release implied.",
+        "Target 3–5 formative nurse walkthroughs if participants are available; record actual denominators, not assumed results.",
+        "Measure accepted artifact, material omissions, explanation of source/model/save locations, stop/recovery and total review effort.",
+        "Report full relevant tests, known lint hold, real-model gaps, user-feedback gaps, and go/revise/hold separately."
+      ],
+      "depends_on": [
+        "SS-01",
+        "SS-02",
+        "SS-03"
+      ],
+      "gate_dependencies": [],
+      "conditional_gates": [
+        "G-01",
+        "G-02",
+        "G-03"
+      ],
+      "scope": "Local or expressly authorized isolated staging only; no external deployment, marketing launch or live accounts.",
+      "weakens": "A successful demo can conceal missing validation; do not claim product, security or clinical readiness from prototype tests.",
+      "next_action": "Assemble the available stages, run the defined evaluation cases and identify the single highest-value next improvement.",
+      "owner": "Development agent; Robert reviews product value",
+      "review_status": "not_reviewed",
+      "evidence": []
+    }
+  ],
+  "gates": [
+    {
+      "id": "G-01",
+      "title": "Clean CI + maintainer review",
+      "state": "blocked",
+      "owner": "Authorized repository maintainer",
+      "reason": "20 lint findings remain in seven held files. Earlier tool-level safety holds are not bypassed or retried through another route.",
+      "resolution": "Resolve issue #16 through the permitted maintainer process; verify fresh full CI and human review before release or operational portfolio activation.",
+      "url": "https://github.com/AI-Nurse-Solutions/florence-x/issues/16"
+    },
+    {
+      "id": "G-02",
+      "title": "Runtime identity + enforced authority",
+      "state": "blocked",
+      "owner": "Runtime/security reviewer + workspace owner",
+      "reason": "Deployed revision, reviewer identity, approval binding and complete Hermes boundary mediation are not established.",
+      "resolution": "Assess the exact runtime; verify authenticated identity, admission, cancellation, egress and approval controls before activating consequential capabilities.",
+      "url": "https://github.com/AI-Nurse-Solutions/florence-x/pull/17"
+    },
+    {
+      "id": "G-03",
+      "title": "Live model / cloud test access",
+      "state": "blocked",
+      "owner": "Workspace owner",
+      "reason": "No live endpoint credentials, provider budget, tenant infrastructure or staging authorization supplied for this sprint.",
+      "resolution": "Use fixtures without new external spend. Live evaluation or hosting needs approved endpoints, an explicit budget and scoped authorization.",
+      "url": ""
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-09-09T20:17:36-07:00",
+      "event": "Sprint planned",
+      "detail": "Existing Seed Garden source inspected; catalog PR and issue #16 checked. Seven target build days proposed with no release gate relaxed."
+    },
+    {
+      "at": "2026-09-09T20:17:36-07:00",
+      "event": "Setup tested",
+      "detail": "Plan and local board prepared; 36 Python tests, 13 JavaScript assertions and 12 offline browser checks passed. No build-day task, release or portfolio execution claimed."
+    }
+  ]
+}
