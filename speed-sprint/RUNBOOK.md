@@ -22,3 +22,13 @@ Human need/scope → inspected sources/code → pillar mapping → minimal chang
 
 ## Known baseline
 Florence-X catalog PR #17 at 369bac4171cd; safeguard/CI PR #15 at 7cb94142857d; issue #16 open. These are read-time baselines, not permanent truths. The Hermes installed revision is unknown. Verify exact upstream and local interfaces before adapter implementation; do not inherit unsupported revision claims from earlier prose.
+
+## Sprint 2 activation — September 11, 2026
+
+Robert requested activation after the seven-day Sprint 2 plan. On an unambiguous continuation request, read `assets/speed-sprint-2.json` in this branch **as well as** the unchanged Sprint 1 ledger. The new ledger tracks Sprint 2 state only; it does not close SS-04/05/06/07 or any inherited gate.
+
+Use the original `Speed_Sprint_2_Proposed_Kanban_Cards.json` and `Speed_Sprint_2_Seven_Day_Plan.md` from the Nurse AI OS Project or exact activation-package copies. Their SHA-256 identities are recorded in the new ledger. Retrieve the Project sources if absent; do not invent changed definitions. See `speed-sprint/sprint-2/S2-01_REVIEW_BRIEF.md`.
+
+S2-01 preparation is complete, but product purpose, product-owner feedback, independent review disposition, observation arrangements and maintainer acceptance remain missing. The next step is the human review conversation, not a new autonomous feature build. Record only genuine evidence with appropriate permission; do not publish raw feedback or participant data. Keep later cards planned until their real dependencies are satisfied. A review-column card is not a reviewed artifact.
+
+The new local dashboard section is a generated status snapshot. The legacy refresh button retrieves Sprint 1 only; it does not refresh Sprint 2 or upload notes. Update the separate Sprint 2 ledger and rebuild its snapshot deliberately. Keep the original runbook's restrictions and the two-cycle repair limit. No automatic scheduling, gate release, model/native/save activation, merge or deployment.
