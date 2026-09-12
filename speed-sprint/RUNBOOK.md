@@ -40,3 +40,13 @@ Robert explicitly requested continuing the sprint and preparing the pivot descri
 The next proposed application target is MD-01: an in-memory one-page teaching-card draft derived from the existing mission/choice. The delivery lane is prepared, not activated by this record. On the next explicit request to enter that lane, recheck the code and review the MD-01 acceptance and no-save boundary before implementing. Do not repeatedly regenerate the same transition packet. Continue actual educator review in parallel, keeping it distinct from engineering preparation.
 
 MD-03 saving remains subject to G-01/G-02; native/model work to its applicable G-02/G-03 conditions. No user or source document grants an agent authority to self-approve. One-download release and hosted access remain later goals, not current deliverables. Proposed role owners are not assigned people. Work orders do not authorize hiring, spending, sending messages or copying licensed material.
+
+## Mission-delivery activation and MD-01 — September 11, 2026
+
+The user subsequently requested proceeding with the pivot. That activates bounded prototype development, not operational permissions. Read the current `delivery_implementation` record and backlog revision 2 or later before acting; earlier preparation paragraphs and records are historical. The selected one-page format is confirmed and must not be asked again.
+
+MD-01A is implemented in draft Florence-X PR #25 at `a8116fea3db9fbc44215fcfddf0b0d6bfa06003e`: a memory-only teaching-card view from the existing choice and sources. Its full run passed 846 cases, with the unchanged 20 held lint findings still blocking overall CI. Recheck actual source and results rather than treating these numbers as permanent. See `speed-sprint/reports/MD-01A_TEACHING_CARD.md`.
+
+The next proposed delivery dependency is MD-02: a small maintained source-and-learning pack, rights verification, balanced cases and actual educator review. On a direct continuation request, perform one genuinely eligible part of that work; do not regenerate the activation packet, invent independent review, or silently finish S2-01. Human topic/audience and reviewer arrangements remain pending. The original S2-01–07 task states and acceptance remain unchanged.
+
+MD-03 persistence, MD-05 runtime/model activation, and later installation/hosting remain separately gated. A tested in-memory card does not authorize a writer, export, live provider, native plugin, institutional access, merge or release. No unattended progression or supplier engagement is created by this addendum.
