@@ -32,3 +32,11 @@ Use the original `Speed_Sprint_2_Proposed_Kanban_Cards.json` and `Speed_Sprint_2
 S2-01 preparation is complete, but product purpose, product-owner feedback, independent review disposition, observation arrangements and maintainer acceptance remain missing. The next step is the human review conversation, not a new autonomous feature build. Record only genuine evidence with appropriate permission; do not publish raw feedback or participant data. Keep later cards planned until their real dependencies are satisfied. A review-column card is not a reviewed artifact.
 
 The new local dashboard section is a generated status snapshot. The legacy refresh button retrieves Sprint 1 only; it does not refresh Sprint 2 or upload notes. Update the separate Sprint 2 ledger and rebuild its snapshot deliberately. Keep the original runbook's restrictions and the two-cycle repair limit. No automatic scheduling, gate release, model/native/save activation, merge or deployment.
+
+## Mission-delivery pivot preparation — September 11, 2026
+
+Robert explicitly requested continuing the sprint and preparing the pivot described in the preceding strategy. S2-01F prepares a separate backlog at `speed-sprint/transition/mission-delivery-backlog.json` and implementation/commissioning handoffs. It does not complete S2-01 or alter any original card, gate, policy, review state or participant result.
+
+The next proposed application target is MD-01: an in-memory one-page teaching-card draft derived from the existing mission/choice. The delivery lane is prepared, not activated by this record. On the next explicit request to enter that lane, recheck the code and review the MD-01 acceptance and no-save boundary before implementing. Do not repeatedly regenerate the same transition packet. Continue actual educator review in parallel, keeping it distinct from engineering preparation.
+
+MD-03 saving remains subject to G-01/G-02; native/model work to its applicable G-02/G-03 conditions. No user or source document grants an agent authority to self-approve. One-download release and hosted access remain later goals, not current deliverables. Proposed role owners are not assigned people. Work orders do not authorize hiring, spending, sending messages or copying licensed material.
