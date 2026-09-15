@@ -218,3 +218,17 @@ window.SEED_GARDEN = [
     next: "Establish a repeatable show architecture: opening thesis, one capability, one nurse use case, one stewardship lesson, one invitation to act."
   }
 ];
+
+// Special-project capture only. Existing seeds and Speed Sprint ledgers remain unchanged.
+window.SEED_GARDEN.push({
+  id: "naio-voice-gesture-thinking-canvas-2026-09-14",
+  project_id: "NAIO-SP-VGTC-2026-09-14",
+  title: "Special Project: Voice & Gesture Thinking Canvas",
+  summary: "A future visual mode of Nurse AI OS Mission Control: speak ideas into editable diagrams and workflows, then move, group, expand and connect objects with simple hand gestures. Large transparent displays remain an optional later exploration, not a prototype prerequisite.",
+  status: "seed", priority: "Medium", horizon: "Future exploration — not scheduled", workstream: "Nurse AI OS / Special Projects",
+  tags: ["Special Project", "Voice", "Gestures", "Visual thinking", "Mission Control"],
+  owner: "Robert Domondon — concept owner; development lead unassigned",
+  artifact: "special-projects/voice-gesture-thinking-canvas.md",
+  next: "Review the project brief at special-projects/voice-gesture-thinking-canvas.md. When activated, choose one non-PHI planning scenario and storyboard before authorizing a prototype. No current Speed Sprint, hardware purchase or deployment is authorized."
+});
+window.SEED_GARDEN_UPDATED = "September 14, 2026 — Voice & Gesture Thinking Canvas captured; other seeds unchanged";
